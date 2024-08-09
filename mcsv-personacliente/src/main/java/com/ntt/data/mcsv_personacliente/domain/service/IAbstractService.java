@@ -1,9 +1,11 @@
 package com.ntt.data.mcsv_personacliente.domain.service;
 
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public interface IAbstractService<T, ID> {
 
     List<T> getAll();
@@ -14,6 +16,6 @@ public interface IAbstractService<T, ID> {
 
     T update(T o);
 
-    T delete(T o);
+    T delete(ID id);
 
 }

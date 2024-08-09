@@ -45,8 +45,9 @@ public class ClienteService implements IAbstractService<Cliente, Integer> {
     }
 
     @Override
-    public Cliente delete(Cliente o) {
-        clienteCrudRepository.delete(o);
-        return o;
+    public Cliente delete(Integer id) {
+        Cliente cliente = getById(id);
+        clienteCrudRepository.delete(cliente);
+        return cliente;
     }
 }

@@ -1,0 +1,29 @@
+package com.ntt.data.mcsv_cuentamovimientos.persistence.mapper;
+
+import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
+import com.ntt.data.mcsv_cuentamovimientos.domain.dto.MovimientoDTO;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Movimiento;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
+
+import java.util.List;
+
+@Mapper
+public interface MovimientoMapper {
+
+    MovimientoMapper INSTANCE = Mappers.getMapper(MovimientoMapper.class);
+
+
+    Movimiento getEntidad(MovimientoDTO movimientoDTO);
+
+    List<Movimiento> getEntidades(List<MovimientoDTO> lstMovimientoDTO);
+
+    @InheritInverseConfiguration
+
+    MovimientoDTO getDTO(Movimiento movimiento);
+    List<MovimientoDTO> getDTOs(List<Movimiento> lstMovimiento);
+
+}
