@@ -21,6 +21,8 @@ public class Cuenta {
     @Column(name = "saldo_inicial")
     private Double saldoInicial;
 
+    @Column(name = "saldo_actual")
+    private Double saldoActual;
 
     private Boolean estado;
 
@@ -66,6 +68,14 @@ public class Cuenta {
 
     public void setSaldoInicial(Double saldoInicial) {
         this.saldoInicial = saldoInicial;
+    }
+
+    public Double getSaldoActual() {
+        return saldoActual;
+    }
+
+    public void setSaldoActual(Double saldoActual) {
+        this.saldoActual = saldoActual;
     }
 
     public Boolean getEstado() {

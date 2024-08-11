@@ -19,13 +19,14 @@ public interface MovimientoMapper {
 
     @Mappings({
             @Mapping(target="cuentaId.id", source = "cuentaId"),
+            @Mapping(target="cuentaId.numeroCuenta", source = "numeroCuenta"),
+            @Mapping(target="cuentaId.tipoCuenta", source = "tipoCuenta"),
     })
     Movimiento getEntidad(MovimientoDTO movimientoDTO);
 
     List<Movimiento> getEntidades(List<MovimientoDTO> lstMovimientoDTO);
 
     @InheritInverseConfiguration
-
     MovimientoDTO getDTO(Movimiento movimiento);
     List<MovimientoDTO> getDTOs(List<Movimiento> lstMovimiento);
 

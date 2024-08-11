@@ -9,11 +9,15 @@ public class CuentaDTO {
 
     private Integer clienteId;
 
+    private String clienteNombre;
+
     private String numeroCuenta;
 
     private String tipoCuenta;
 
     private Double saldoInicial;
+
+    private Double saldoActual;
 
     private Boolean estado;
 
@@ -29,6 +33,14 @@ public class CuentaDTO {
 
     public Integer getClienteId() {
         return clienteId;
+    }
+
+    public String getClienteNombre() {
+        return clienteNombre;
+    }
+
+    public void setClienteNombre(String clienteNombre) {
+        this.clienteNombre = clienteNombre;
     }
 
     public void setClienteId(Integer clienteId) {
@@ -57,6 +69,14 @@ public class CuentaDTO {
 
     public void setSaldoInicial(Double saldoInicial) {
         this.saldoInicial = saldoInicial;
+    }
+
+    public Double getSaldoActual() {
+        return saldoActual;
+    }
+
+    public void setSaldoActual(Double saldoActual) {
+        this.saldoActual = saldoActual;
     }
 
     public Boolean getEstado() {

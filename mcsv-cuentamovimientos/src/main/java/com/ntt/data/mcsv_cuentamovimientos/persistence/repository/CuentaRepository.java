@@ -49,4 +49,12 @@ public class CuentaRepository implements ICuentaRepository {
     public void delete(int id) {
         cuentaCrudRepository.deleteById(id);
     }
+
+    @Override
+    public List<CuentaDTO> getByClienteId(int id){
+        List<Cuenta> lstCuentas = cuentaCrudRepository.findByClienteId(id);
+
+        return CuentaMapper.INSTANCE.getDTOs(lstCuentas);
+    }
+
 }

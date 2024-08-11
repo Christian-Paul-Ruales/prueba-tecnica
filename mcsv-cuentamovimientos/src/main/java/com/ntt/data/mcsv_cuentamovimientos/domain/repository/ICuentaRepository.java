@@ -14,4 +14,7 @@ public interface ICuentaRepository {
     CuentaDTO update(CuentaDTO cuenta);
 
     void delete(int id);
+
+    List<CuentaDTO> getByClienteId(int clienteId);
+
 }

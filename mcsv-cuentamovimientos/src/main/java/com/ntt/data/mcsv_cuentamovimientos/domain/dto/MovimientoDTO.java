@@ -16,6 +16,10 @@ public class MovimientoDTO {
 
     private Integer cuentaId;
 
+    private String numeroCuenta;
+
+    private String tipoCuenta;
+
     public Integer getId() {
         return id;
     }
@@ -62,5 +66,21 @@ public class MovimientoDTO {
 
     public void setCuentaId(Integer cuentaId) {
         this.cuentaId = cuentaId;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public String getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(String tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
     }
 }

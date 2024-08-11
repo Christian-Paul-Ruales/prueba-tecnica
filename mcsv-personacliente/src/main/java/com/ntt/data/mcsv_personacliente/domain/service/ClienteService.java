@@ -5,6 +5,7 @@ import com.ntt.data.mcsv_personacliente.domain.dto.ClienteDTO;
 import com.ntt.data.mcsv_personacliente.domain.exception.DomainException;
 import com.ntt.data.mcsv_personacliente.domain.repository.IClienteRepository;
 import com.ntt.data.mcsv_personacliente.domain.util.ServiceUtil;
+import com.ntt.data.mcsv_personacliente.domain.util.UsuarioUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,8 @@ public class ClienteService {
     @Autowired
     private ServiceUtil serviceUtil;
 
+    @Autowired
+    private UsuarioUtil usuarioUtil;
     @Autowired
     private IClienteRepository clienteRepository;
 
@@ -34,6 +37,8 @@ public class ClienteService {
 
     public ClienteDTO save(ClienteDTO clienteDTO) {
         clienteDTO.setPersonaId(serviceUtil.generarUuid(clienteDTO.getNombre()));
+        String contrasena = usuarioUtil.generarPassword(clienteDTO);
+        clienteDTO.setContrasena(contrasena);
         return clienteRepository.save(clienteDTO);
     }
 
@@ -43,6 +48,9 @@ public class ClienteService {
             throw new DomainException(String.format(DominioConstantes.MSG_ERROR_DATA_REQUERIDA, "ID CLIENTE"));
         }
         getById(clienteDTO.getId());
+
+        String contrasena = usuarioUtil.generarPassword(clienteDTO);
+        clienteDTO.setContrasena(contrasena);
 
         return clienteRepository.save(clienteDTO);
     }

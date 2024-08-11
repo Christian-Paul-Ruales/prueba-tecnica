@@ -32,6 +32,18 @@ public class MovimientoController {
 
     }
 
+    @GetMapping("cuenta/{cuentaId}")
+    public ResponseEntity getByCuentaId(@PathVariable("cuentaId") int cuentaId){
+        try {
+            return new ResponseEntity<>(movimientoService.getAllByCuentaId(cuentaId), HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
+    }
+
+
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public MovimientoDTO save(@RequestBody MovimientoDTO movimientoDTO){
@@ -56,4 +68,6 @@ public class MovimientoController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+
 }
