@@ -7,6 +7,7 @@ import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Movimiento;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -16,7 +17,9 @@ public interface MovimientoMapper {
 
     MovimientoMapper INSTANCE = Mappers.getMapper(MovimientoMapper.class);
 
-
+    @Mappings({
+            @Mapping(target="cuentaId.id", source = "cuentaId"),
+    })
     Movimiento getEntidad(MovimientoDTO movimientoDTO);
 
     List<Movimiento> getEntidades(List<MovimientoDTO> lstMovimientoDTO);

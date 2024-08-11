@@ -7,6 +7,8 @@ import java.util.List;
 public class CuentaDTO {
     private Integer id;
 
+    private Integer clienteId;
+
     private String numeroCuenta;
 
     private String tipoCuenta;
@@ -23,6 +25,14 @@ public class CuentaDTO {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
     }
 
     public String getNumeroCuenta() {

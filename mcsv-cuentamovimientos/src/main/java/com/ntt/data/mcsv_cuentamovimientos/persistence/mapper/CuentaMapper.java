@@ -5,6 +5,7 @@ import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
 public interface CuentaMapper {
 
     CuentaMapper INSTANCE = Mappers.getMapper(CuentaMapper.class);
+
 
     Cuenta getEntidad(CuentaDTO cuentaDTO);
 

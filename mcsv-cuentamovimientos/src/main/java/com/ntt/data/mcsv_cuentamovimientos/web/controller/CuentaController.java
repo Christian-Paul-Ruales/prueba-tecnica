@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cuenta")
+@RequestMapping("/cuentas")
 public class CuentaController {
 
     @Autowired
@@ -39,7 +39,6 @@ public class CuentaController {
     }
 
     @PutMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity update(@RequestBody CuentaDTO cuentaDTO){
         try {
             return new ResponseEntity<>(cuentaService.update(cuentaDTO), HttpStatus.CREATED);
@@ -51,8 +50,9 @@ public class CuentaController {
     @DeleteMapping("{id}")
     public ResponseEntity delete(@PathVariable("id") int id){
         try {
-            return new ResponseEntity<>(cuentaService.delete(id), HttpStatus.CREATED);
+            return new ResponseEntity<>(cuentaService.delete(id), HttpStatus.OK);
         }catch (Exception e){
+            e.printStackTrace();
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }

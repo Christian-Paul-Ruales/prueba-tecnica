@@ -21,7 +21,7 @@ public class Movimiento {
     private Double saldo;
 
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "cuentaId", referencedColumnName = "id")
     private Cuenta cuentaId;
 
 

@@ -1,53 +1,56 @@
 package com.ntt.data.mcsv_personacliente.domain.service;
 
 import com.ntt.data.mcsv_personacliente.domain.constantes.DominioConstantes;
-import com.ntt.data.mcsv_personacliente.domain.exception.ServiceException;
-import com.ntt.data.mcsv_personacliente.persistence.crud.ClienteCrudRepository;
-import com.ntt.data.mcsv_personacliente.persistence.entity.Cliente;
+import com.ntt.data.mcsv_personacliente.domain.dto.ClienteDTO;
+import com.ntt.data.mcsv_personacliente.domain.exception.DomainException;
+import com.ntt.data.mcsv_personacliente.domain.repository.IClienteRepository;
+import com.ntt.data.mcsv_personacliente.domain.util.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class ClienteService implements IAbstractService<Cliente, Integer> {
+public class ClienteService {
 
     @Autowired
-    private ClienteCrudRepository clienteCrudRepository;
+    private ServiceUtil serviceUtil;
 
-    @Override
-    public List<Cliente> getAll() {
-        return (List<Cliente>) clienteCrudRepository.findAll();
+    @Autowired
+    private IClienteRepository clienteRepository;
+
+
+    public List<ClienteDTO> getAll() {
+        return clienteRepository.getAll();
     }
 
-    @Override
-    public Cliente getById(Integer id)  {
 
-        return clienteCrudRepository.findById(id).
-                orElseThrow( () -> new ServiceException(String.format(DominioConstantes.MSG_ERROR_BUSQUEDA_PERSONA, id))
+    public ClienteDTO getById(Integer id)  {
+
+        return clienteRepository.getById(id).orElseThrow(
+                () -> new DomainException(String.format(DominioConstantes.MSG_ERROR_BUSQUEDA_PERSONA, id))
                 );
     }
 
-    @Override
-    public Cliente save(Cliente o) {
 
-        return clienteCrudRepository.save(o);
+    public ClienteDTO save(ClienteDTO clienteDTO) {
+        clienteDTO.setPersonaId(serviceUtil.generarUuid(clienteDTO.getNombre()));
+        return clienteRepository.save(clienteDTO);
     }
 
-    @Override
-    public Cliente update(Cliente o) {
-        if(o.getId() == null){
-            throw new ServiceException(String.format(DominioConstantes.MSG_ERROR_DATA_REQUERIDA, "ID CLIENTE"));
+
+    public ClienteDTO update(ClienteDTO clienteDTO) {
+        if(clienteDTO.getId() == null){
+            throw new DomainException(String.format(DominioConstantes.MSG_ERROR_DATA_REQUERIDA, "ID CLIENTE"));
         }
-        Cliente cliente = getById(o.getId());
+        getById(clienteDTO.getId());
 
-        return clienteCrudRepository.save(cliente);
+        return clienteRepository.save(clienteDTO);
     }
 
-    @Override
-    public Cliente delete(Integer id) {
-        Cliente cliente = getById(id);
-        clienteCrudRepository.delete(cliente);
-        return cliente;
+
+    public ClienteDTO delete(Integer id) {
+        ClienteDTO clienteDTO = getById(id);
+        clienteRepository.delete(id);
+        return clienteDTO;
     }
 }

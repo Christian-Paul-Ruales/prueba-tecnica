@@ -7,6 +7,7 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.repository.IMovimientoReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -25,6 +26,7 @@ public class MovimientoService {
     }
 
     public MovimientoDTO save(MovimientoDTO movimientoDTO){
+        movimientoDTO.setFecha(new Date());
         return movimientoRepository.save(movimientoDTO);
     }
 

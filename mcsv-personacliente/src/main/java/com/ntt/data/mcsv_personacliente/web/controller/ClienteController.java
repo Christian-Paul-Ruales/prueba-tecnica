@@ -12,60 +12,52 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("cliente")
+@RequestMapping("clientes")
 public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
 
-    @Autowired
-    private ClienteMapper clienteMapper;
+
 
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<ClienteDTO> getAll() {
+        return clienteService.getAll();
 
-        List<Cliente> lstClientes =clienteService.getAll();
-        return clienteMapper.getDTOs(lstClientes);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity getById(@PathVariable("id") int id) {
-
         try {
-            Cliente cliente = clienteService.getById(id);
-            ClienteDTO clienteDTO = clienteMapper.getDTO(cliente);
-
-            return new ResponseEntity<>(clienteDTO, HttpStatus.OK);
+            return new ResponseEntity<>(clienteService.getById(id), HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ClienteDTO save(@RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = clienteMapper.getEntidad(clienteDTO);
-        return clienteMapper.getDTO(clienteService.save(cliente));
+        return clienteService.save(clienteDTO);
     }
 
     @PutMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public ClienteDTO update(@RequestBody ClienteDTO clienteDTO) {
-        Cliente cliente = clienteMapper.getEntidad(clienteDTO);
-        return clienteMapper.getDTO(clienteService.save(cliente));
+    public ResponseEntity update(@RequestBody ClienteDTO clienteDTO) {
+        try {
+            return new ResponseEntity<>(clienteService.update(clienteDTO), HttpStatus.CREATED);
+        }catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity delete(@PathVariable("id") int id ) {
         try {
-            Cliente cliente = clienteService.delete(id);
-            ClienteDTO clienteDTO = clienteMapper.getDTO(cliente);
-
-            return new ResponseEntity<>(clienteDTO, HttpStatus.OK);
+            return new ResponseEntity<>(clienteService.delete(id), HttpStatus.CREATED);
         }catch (Exception e){
-            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
 
     }

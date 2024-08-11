@@ -4,11 +4,13 @@ import com.ntt.data.mcsv_personacliente.domain.dto.ClienteDTO;
 import com.ntt.data.mcsv_personacliente.persistence.entity.Cliente;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface ClienteMapper {
+    ClienteMapper INSTANCE = Mappers.getMapper(ClienteMapper.class);
 
     Cliente getEntidad(ClienteDTO clienteDTO);
 

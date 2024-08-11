@@ -1,28 +1,27 @@
 package com.ntt.data.mcsv_personacliente.persistence.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CollectionId;
 
 import java.io.Serializable;
 
-
-@Table(name = "persona")
-public class Persona  implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@MappedSuperclass
+public class Persona {
+    @Column(name = "persona_id")
+    private String personaId;
     private String nombre;
     private String genero;
     private Integer edad;
     private String identificacion;
-    private String dirección;
-    private String teléfono;
+    private String direccion;
+    private String telefono;
 
-    public Integer getId() {
-        return id;
+    public String getPersonaId() {
+        return personaId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPersonaId(String personaId) {
+        this.personaId = personaId;
     }
 
     public String getGenero() {
@@ -57,19 +56,19 @@ public class Persona  implements Serializable {
         this.identificacion = identificacion;
     }
 
-    public String getDirección() {
-        return dirección;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirección(String dirección) {
-        this.dirección = dirección;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getTeléfono() {
-        return teléfono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTeléfono(String teléfono) {
-        this.teléfono = teléfono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

@@ -14,7 +14,7 @@ public class MovimientoDTO {
 
     private Double saldo;
 
-    private CuentaDTO cuenta;
+    private Integer cuentaId;
 
     public Integer getId() {
         return id;
@@ -56,11 +56,11 @@ public class MovimientoDTO {
         this.valor = valor;
     }
 
-    public CuentaDTO getCuenta() {
-        return cuenta;
+    public Integer getCuentaId() {
+        return cuentaId;
     }
 
-    public void setCuenta(CuentaDTO cuenta) {
-        this.cuenta = cuenta;
+    public void setCuentaId(Integer cuentaId) {
+        this.cuentaId = cuentaId;
     }
 }
