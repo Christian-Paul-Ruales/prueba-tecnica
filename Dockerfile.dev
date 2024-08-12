@@ -1,0 +1,22 @@
+FROM openjdk:17
+
+RUN mkdir -p /home/app
+WORKDIR /home/app
+
+
+ARG JAR_DISCOVERY=./discovery-server/target/discovery-server-0.0.1-SNAPSHOT.jar
+ARG JAR_PERSONA=./mcsv-personacliente/target/tdd-0.0.1-SNAPSHOT.jar
+ARG JAR_CUENTA=./mcsv-cuentamovimientos/target/mcsv-cuentamovimientos-0.0.1-SNAPSHOT.jar
+ARG JAR_GATEWAY=./api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar
+
+COPY ${JAR_DISCOVERY} /home/app/discovery.jar
+COPY ${JAR_PERSONA} /home/app/persona.jar
+COPY ${JAR_CUENTA} /home/app/cuenta.jar
+COPY ${JAR_GATEWAY} /home/app/gateway.jar
+
+CMD ['java','-jar','/home/app/discovery.jar']
+CMD ['java','-jar','/home/app/persona.jar']
+CMD ['java','-jar','/home/app/cuenta.jar']
+CMD ['java','-jar','/home/app/gateway.jar']
+
+

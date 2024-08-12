@@ -1,0 +1,31 @@
+# version: "3.9" #En las nuevas versiones ya no es necesario
+services:
+  prueba_tecnica:
+    build:
+      context: . # contexto donde la app estara trabajando
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8085:8085" # personacliente
+      - "8086:8086" # cuentamovimiento
+      - "8080:8080" # gateway
+      - "8761:8761" # discovery-server
+
+    links:
+      - db
+    volumes:
+      - ./prueba_tecnica:/home/app # volumen anonimo: #maquina:contenedor
+
+  db:
+    image: mysql
+    ports:
+      - "3333:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Cpro123db
+    volumes:
+      - ./mysql:/var/lib/mysql #directorio dentro del contenedor
+
+
+# ejecutar: docker compose -f docker-compose-dev.yml up -d
+
+
