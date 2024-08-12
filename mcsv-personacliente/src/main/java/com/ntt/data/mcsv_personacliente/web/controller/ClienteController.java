@@ -55,7 +55,7 @@ public class ClienteController {
     @DeleteMapping("{id}")
     public ResponseEntity delete(@PathVariable("id") int id ) {
         try {
-            return new ResponseEntity<>(clienteService.delete(id), HttpStatus.CREATED);
+            return new ResponseEntity<>(clienteService.delete(id), HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
