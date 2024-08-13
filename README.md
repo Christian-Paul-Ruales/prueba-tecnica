@@ -5,6 +5,9 @@
 * Base de datos: Mysql (docker-compose)
 * Postman
 * Spring Boot 3.3.2 (JDK 17)
+  * lombok
+  *
+
 
 ## Ejecucion de la base de datos
 1. Arrancar el proyecto en la carpeta raiz, el proceso demorara un poco
@@ -16,6 +19,12 @@ docker compose up -d
 ```bash
 mysql -P 3333 -u root -p
 ```
+**password**
+
+```
+Cpro123db
+```
+
 
 3. Creacion de la base de datos
 ```
