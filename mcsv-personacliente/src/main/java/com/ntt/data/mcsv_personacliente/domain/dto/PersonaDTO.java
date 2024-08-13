@@ -1,68 +1,29 @@
 package com.ntt.data.mcsv_personacliente.domain.dto;
 
-public class PersonaDTO {
-    private String personaId;
-    private String nombre;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
 
+@Data
+public class PersonaDTO {
+    @NotNull
+    private String personaId;
+    @NotNull
+    private String nombre;
+    @NotNull
+    @NotBlank
+    @Size(max = 1, message = "Genero en mayuscula, M o F")
     private String genero;
+    @NotNull
     private Integer edad;
+    @NotNull
+    @Size(min = 10, max = 13, message = "identificacion entre 10 y 13 caracteres")
     private String identificacion;
+    @Size(max=100, message = "maximo 1000 caracteres")
     private String direccion;
+    @Size(max=10, min = 10, message = "Telefono debe contener entre 9 y 10 digitos")
     private String telefono;
 
-    public String getPersonaId() {
-        return personaId;
-    }
 
-    public void setPersonaId(String personaId) {
-        this.personaId = personaId;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public Integer getEdad() {
-        return edad;
-    }
-
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
-
-    public String getIdentificacion() {
-        return identificacion;
-    }
-
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
 }

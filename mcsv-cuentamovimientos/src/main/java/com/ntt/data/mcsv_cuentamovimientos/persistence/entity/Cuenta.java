@@ -1,9 +1,13 @@
 package com.ntt.data.mcsv_cuentamovimientos.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "cuenta")
 public class Cuenta {
@@ -29,60 +33,5 @@ public class Cuenta {
     @OneToMany(mappedBy = "cuentaId",cascade = CascadeType.ALL)
     private List<Movimiento> lstMovimientos;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getClienteId() {
-        return clienteId;
-    }
-
-    public void setClienteId(Integer clienteId) {
-        this.clienteId = clienteId;
-    }
-
-
-    public String getNumeroCuenta() {
-        return numeroCuenta;
-    }
-
-    public void setNumeroCuenta(String numeroCuenta) {
-        this.numeroCuenta = numeroCuenta;
-    }
-
-    public String getTipoCuenta() {
-        return tipoCuenta;
-    }
-
-    public void setTipoCuenta(String tipoCuenta) {
-        this.tipoCuenta = tipoCuenta;
-    }
-
-    public Double getSaldoInicial() {
-        return saldoInicial;
-    }
-
-    public void setSaldoInicial(Double saldoInicial) {
-        this.saldoInicial = saldoInicial;
-    }
-
-    public Double getSaldoActual() {
-        return saldoActual;
-    }
-
-    public void setSaldoActual(Double saldoActual) {
-        this.saldoActual = saldoActual;
-    }
-
-    public Boolean getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
-    }
 }

@@ -64,7 +64,7 @@ public class ReporteService {
             saldoActual = lstMovimientosCuenta.isEmpty() ? cuentaDTO.getSaldoInicial() : lstMovimientosCuenta.get(lstMovimientosCuenta.size() - 1).getSaldo();
 
             clienteDTO = clienteClient.getById(cuentaDTO.getClienteId());
-            estadoCuentaDTO = new EstadoCuentaDTO(clienteDTO.getNombre(),cuentaDTO.getNumeroCuenta(),cuentaDTO.getTipoCuenta(),cuentaDTO.getEstado(),cuentaDTO.getSaldoInicial(), saldoActual, lstMovimientosCuenta);
+            estadoCuentaDTO = new EstadoCuentaDTO(clienteDTO.getNombre(),cuentaDTO.getNumeroCuenta(),cuentaDTO.getTipoCuenta(),cuentaDTO.getSaldoInicial(), cuentaDTO.getEstado(), saldoActual, lstMovimientosCuenta);
             lstEstadoCuenta.add(estadoCuentaDTO);
         }
 
