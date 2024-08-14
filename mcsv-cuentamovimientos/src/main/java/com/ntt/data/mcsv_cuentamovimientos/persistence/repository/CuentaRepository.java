@@ -5,7 +5,8 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.repository.ICuentaRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.crud.CuentaCrudRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.mapper.CuentaMapper;
-import com.ntt.data.mcsv_cuentamovimientos.web.controller.CuentaController;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
+@RequiredArgsConstructor
 @Repository
 public class CuentaRepository implements ICuentaRepository {
-    @Autowired
-    private CuentaCrudRepository cuentaCrudRepository;
 
-    private static final Logger logger = LoggerFactory.getLogger(CuentaRepository.class);
-
-
+    private final CuentaCrudRepository cuentaCrudRepository;
+    
     @Override
     public List<CuentaDTO> getAll() {
         List<Cuenta> lstCuentas = (List<Cuenta>) cuentaCrudRepository.findAll();
@@ -57,7 +57,7 @@ public class CuentaRepository implements ICuentaRepository {
     @Override
     public List<CuentaDTO> getByClienteId(int id){
         List<Cuenta> lstCuentas = cuentaCrudRepository.findByClienteId(id);
-        logger.info(String.format("Cliente %s se encontraron %s cuentas",id, lstCuentas.size()));
+        log.info(String.format("Cliente %s se encontraron %s cuentas",id, lstCuentas.size()));
         return CuentaMapper.INSTANCE.getDTOs(lstCuentas);
     }
 

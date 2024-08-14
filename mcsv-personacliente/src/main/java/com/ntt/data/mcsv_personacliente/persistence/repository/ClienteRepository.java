@@ -5,28 +5,28 @@ import com.ntt.data.mcsv_personacliente.domain.repository.IClienteRepository;
 import com.ntt.data.mcsv_personacliente.persistence.crud.ClienteCrudRepository;
 import com.ntt.data.mcsv_personacliente.persistence.entity.Cliente;
 import com.ntt.data.mcsv_personacliente.persistence.mapper.ClienteMapper;
-import com.ntt.data.mcsv_personacliente.web.controller.ClienteController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+@Slf4j
+@RequiredArgsConstructor
 @Repository
 public class ClienteRepository implements IClienteRepository {
-    @Autowired
-    private ClienteCrudRepository clienteCrudRepository;
 
-    private static final Logger logger = LoggerFactory.getLogger(ClienteRepository.class);
+    private final ClienteCrudRepository clienteCrudRepository;
+
 
     @Override
     public List<ClienteDTO> getAll() {
         List<Cliente> lstClientes = (List<Cliente>) clienteCrudRepository.findAll();
 
-        logger.info(
+        log.info(
                 new StringBuilder("Metodo getAll: numero de datos a retornar ")
                         .append(lstClientes.size()).toString()
                 );
@@ -36,7 +36,7 @@ public class ClienteRepository implements IClienteRepository {
 
     @Override
     public Optional<ClienteDTO> getById(int id) {
-        logger.info(
+        log.info(
                 new StringBuilder("Metodo getById: id enviada  ")
                         .append(id).toString()
         );
@@ -59,7 +59,7 @@ public class ClienteRepository implements IClienteRepository {
     @Override
     public void delete(int id) {
 
-        logger.info(
+        log.info(
                 new StringBuilder("Metodo delete: id enviada  ")
                         .append(id).toString()
         );

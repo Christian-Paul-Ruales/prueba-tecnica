@@ -5,6 +5,8 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.repository.IMovimientoReposito
 import com.ntt.data.mcsv_cuentamovimientos.persistence.crud.MovimientoCrudRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Movimiento;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.mapper.MovimientoMapper;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +15,13 @@ import org.springframework.stereotype.Repository;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+@Slf4j
+@RequiredArgsConstructor
 @Repository
 public class MovimientoRepository implements IMovimientoRepository {
-    @Autowired
-    private MovimientoCrudRepository movimientoCrudRepository;
+    private final MovimientoCrudRepository movimientoCrudRepository;
 
-    private static final Logger logger = LoggerFactory.getLogger(CuentaRepository.class);
 
 
     @Override
@@ -58,7 +61,7 @@ public class MovimientoRepository implements IMovimientoRepository {
 
     @Override
     public List<MovimientoDTO> getAllByCuentaIdBetweenTo(int cuentaId, Date fechaInicio, Date fechaFin){
-        logger.info("Inicio metodo buscando cuentas por id entre fechas");
+        log.info("Inicio metodo buscando cuentas por id entre fechas");
         List<Movimiento> lstMovimientos = movimientoCrudRepository.findByCuentaIdBetweenToByOrderByIdAsc(cuentaId, fechaInicio, fechaFin);
         return MovimientoMapper.INSTANCE.getDTOs(lstMovimientos);
 

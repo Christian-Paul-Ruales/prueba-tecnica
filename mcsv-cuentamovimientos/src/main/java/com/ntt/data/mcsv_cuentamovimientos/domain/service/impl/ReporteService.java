@@ -8,32 +8,28 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.dto.EstadoCuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.MovimientoDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.service.IReporteService;
 import com.ntt.data.mcsv_cuentamovimientos.domain.util.ServiceUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class ReporteService implements IReporteService {
-    @Autowired
-    private ServiceUtil serviceUtil;
 
-    @Autowired
-    private MovimientoService movimientoService;
-    @Autowired
-    private CuentaService cuentaService;
-    @Autowired
-    private ClienteClient clienteClient;
+    private final ServiceUtil serviceUtil;
+    private final MovimientoService movimientoService;
+    private final CuentaService cuentaService;
+    private final ClienteClient clienteClient;
 
-    private static final Logger logger = LoggerFactory.getLogger(ReporteService.class);
 
     @Override
     public List<EstadoCuentaDTO> generarReporteGeneral(String fechaInicio, String fechaFin){
-        logger.info("Generar reporte con fechas sin parsear");
+        log.info("Generar reporte con fechas sin parsear");
 
         Date fechaInicial = serviceUtil.convertiStringAFecha(fechaInicio, DominioConstantes.PTR_FECHA_PATH);
         Date fechaFinal = serviceUtil.convertiStringAFecha(fechaFin, DominioConstantes.PTR_FECHA_PATH);
@@ -42,7 +38,7 @@ public class ReporteService implements IReporteService {
 
     @Override
     public List<EstadoCuentaDTO> generarReporteGeneral(Date fechaInicio, Date fechaFin) {
-        logger.info("Generar reporte con fechas sin convertidas a tipo Date");
+        log.info("Generar reporte con fechas sin convertidas a tipo Date");
 
         List<ClienteDTO> lstClientes = clienteClient.getAll();
         List<EstadoCuentaDTO> lstEstadoCuenta = new ArrayList<>();
@@ -61,7 +57,7 @@ public class ReporteService implements IReporteService {
 
     @Override
     public List<EstadoCuentaDTO> generarReporteCliente(int clienteId, Date fechaInicio, Date fechaFin){
-        logger.info("Generar reporte por cliente");
+        log.info("Generar reporte por cliente");
 
         List<CuentaDTO> lstCuentas= cuentaService.getByClienteId(clienteId);
         List<MovimientoDTO> lstMovimientosCuenta;
@@ -79,7 +75,7 @@ public class ReporteService implements IReporteService {
             estadoCuentaDTO = new EstadoCuentaDTO(clienteDTO.getNombre(),cuentaDTO.getNumeroCuenta(),cuentaDTO.getTipoCuenta(),cuentaDTO.getSaldoInicial(), cuentaDTO.getEstado(), saldoActual, lstMovimientosCuenta);
             lstEstadoCuenta.add(estadoCuentaDTO);
         }
-        logger.info("Generar reporte por cliente - Metodo finalizado");
+        log.info("Generar reporte por cliente - Metodo finalizado");
 
         return lstEstadoCuenta;
     }

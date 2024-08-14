@@ -7,6 +7,8 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.exception.DomainException;
 import com.ntt.data.mcsv_cuentamovimientos.domain.repository.IMovimientoRepository;
 import com.ntt.data.mcsv_cuentamovimientos.domain.service.IMovimientoService;
 import com.ntt.data.mcsv_cuentamovimientos.domain.util.MovimientoUtil;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +17,16 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class MovimientoService implements IMovimientoService {
-    @Autowired
-    private IMovimientoRepository movimientoRepository;
-    @Autowired
-    private CuentaService cuentaService;
-    @Autowired
-    private MovimientoUtil movimientoUtil;
 
-    private static final Logger logger = LoggerFactory.getLogger(CuentaService.class);
+
+    private final IMovimientoRepository movimientoRepository;
+    private final CuentaService cuentaService;
+    private final MovimientoUtil movimientoUtil;
+    
 
     @Override
     public List<MovimientoDTO> getAll(){
@@ -60,7 +62,7 @@ public class MovimientoService implements IMovimientoService {
 
     @Override
     public MovimientoDTO delete(int id){
-        logger.info(String.format("Borrar movimiento %s", id));
+        log.info(String.format("Borrar movimiento %s", id));
         MovimientoDTO movimientoDTO = getById(id);
         movimientoRepository.delete(id);
         return movimientoDTO;
@@ -73,7 +75,7 @@ public class MovimientoService implements IMovimientoService {
 
     @Override
     public List<MovimientoDTO> getAllBetweenToByCuentaId(int cuentaId, Date fechaInicio, Date fechaFin){
-        logger.info(String.format("Obtener datos por fechas entre %s y %s", fechaInicio, fechaFin));
+        log.info(String.format("Obtener datos por fechas entre %s y %s", fechaInicio, fechaFin));
 
         return movimientoRepository.getAllByCuentaIdBetweenTo(cuentaId, fechaInicio, fechaFin);
     }

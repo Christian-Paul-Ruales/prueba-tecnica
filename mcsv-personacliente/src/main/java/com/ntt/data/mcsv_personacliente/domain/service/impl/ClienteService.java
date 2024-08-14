@@ -7,24 +7,23 @@ import com.ntt.data.mcsv_personacliente.domain.repository.IClienteRepository;
 import com.ntt.data.mcsv_personacliente.domain.service.IClienteService;
 import com.ntt.data.mcsv_personacliente.domain.util.ServiceUtil;
 import com.ntt.data.mcsv_personacliente.domain.util.UsuarioUtil;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class ClienteService implements IClienteService {
 
-    @Autowired
-    private ServiceUtil serviceUtil;
-
-    @Autowired
-    private UsuarioUtil usuarioUtil;
-    @Autowired
-    private IClienteRepository clienteRepository;
-
-    private static final Logger logger = LoggerFactory.getLogger(ClienteService.class);
+    private final ServiceUtil serviceUtil;
+    private final UsuarioUtil usuarioUtil;
+    private final IClienteRepository clienteRepository;
 
     @Override
     public List<ClienteDTO> getAll() {
@@ -50,7 +49,7 @@ public class ClienteService implements IClienteService {
     @Override
     public ClienteDTO update(ClienteDTO clienteDTO) {
         if(clienteDTO.getId() == null){
-            logger.error("update: id no enviado para la actualizacion de informacion");
+            log.error("update: id no enviado para la actualizacion de informacion");
             throw new DomainException(String.format(DominioConstantes.MSG_ERROR_DATA_REQUERIDA, "ID CLIENTE"));
         }
         getById(clienteDTO.getId());
@@ -65,7 +64,7 @@ public class ClienteService implements IClienteService {
     public ClienteDTO delete(Integer id) {
         ClienteDTO clienteDTO = getById(id);
         clienteRepository.delete(id);
-        logger.info("Metodo delete procesado correctamente");
+        log.info("Metodo delete procesado correctamente");
 
         return clienteDTO;
     }

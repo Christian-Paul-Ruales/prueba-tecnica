@@ -1,4 +1,4 @@
-package com.ntt.data.api_gateway.bean;
+package com.ntt.data.mcsv_personacliente.web.controller.handler.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -3,6 +3,7 @@ package com.ntt.data.mcsv_cuentamovimientos.web.controller;
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.service.ICuentaService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,13 +15,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/cuentas")
 public class CuentaController {
 
-    @Autowired
-    private ICuentaService cuentaService;
-
+    private final ICuentaService cuentaService;
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
@@ -39,7 +39,7 @@ public class CuentaController {
         }catch (Exception e){
             log.error("Excepcion al procesar la peticion GET con id", e);
 
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>( HttpStatus.NOT_FOUND);
         }
 
     }

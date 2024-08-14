@@ -8,6 +8,7 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.constantes.DominioConstantes;
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.exception.DomainException;
 import com.ntt.data.mcsv_cuentamovimientos.domain.repository.ICuentaRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,16 +18,15 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Slf4j
+@RequiredArgsConstructor
 @Service
 public class CuentaService implements ICuentaService {
-    @Autowired
-    private  ICuentaRepository cuentaRepository;
 
-    @Autowired
-    private ClienteClient clienteClient;
+    private final ICuentaRepository cuentaRepository;
 
-    @Autowired
-    private CuentaUtil cuentaUtil;
+    private final ClienteClient clienteClient;
+
+    private final CuentaUtil cuentaUtil;
 
 
     @Override
@@ -58,6 +58,7 @@ public class CuentaService implements ICuentaService {
 
         // obtener el nombre del cliente
         ClienteDTO clienteDTO = clienteClient.getById(cuentaGuardadaDTO.getClienteId());
+
         log.info(String.format("Se realizó la consulta de información  del microservicio cliente %s desde el metodo save", cuentaDTO.getClienteId()));
 
         cuentaGuardadaDTO.setClienteNombre(clienteDTO.getNombre());

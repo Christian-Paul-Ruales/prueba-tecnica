@@ -1,4 +1,4 @@
-package com.ntt.data.mcsv_cuentamovimientos.web.handler;
+package com.ntt.data.mcsv_cuentamovimientos.web.handler.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

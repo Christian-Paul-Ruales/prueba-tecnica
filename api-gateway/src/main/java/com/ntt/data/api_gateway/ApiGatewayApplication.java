@@ -1,16 +1,15 @@
 package com.ntt.data.api_gateway;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Slf4j
 @SpringBootApplication
 public class ApiGatewayApplication {
-	private static final Logger logger = LoggerFactory.getLogger(ApiGatewayApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("procesando api-gateway...");
+		log.info("procesando api-gateway...");
 		SpringApplication.run(ApiGatewayApplication.class, args);
 	}
 
