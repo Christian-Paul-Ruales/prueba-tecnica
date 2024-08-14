@@ -7,10 +7,11 @@ import lombok.Data;
 
 @Data
 public class PersonaDTO {
-    @NotNull
     private String personaId;
     @NotNull
+    @NotBlank
     private String nombre;
+
     @NotNull
     @NotBlank
     @Size(max = 1, message = "Genero en mayuscula, M o F")
@@ -18,10 +19,12 @@ public class PersonaDTO {
     @NotNull
     private Integer edad;
     @NotNull
-    @Size(min = 10, max = 13, message = "identificacion entre 10 y 13 caracteres")
+    @Size(min = 10, max = 13, message = "Identificacion entre 10 y 13 caracteres")
     private String identificacion;
-    @Size(max=100, message = "maximo 1000 caracteres")
+
+    @Size(max=100, message = "La dirección tiene un tamaño maximo de 100 caracteres")
     private String direccion;
+
     @Size(max=10, min = 10, message = "Telefono debe contener entre 9 y 10 digitos")
     private String telefono;
 

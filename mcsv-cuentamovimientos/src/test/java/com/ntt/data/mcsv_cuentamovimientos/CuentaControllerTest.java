@@ -4,8 +4,7 @@ package com.ntt.data.mcsv_cuentamovimientos;
 
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.exception.DomainException;
-import com.ntt.data.mcsv_cuentamovimientos.domain.service.CuentaService;
-import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
+import com.ntt.data.mcsv_cuentamovimientos.domain.service.impl.CuentaService;
 import com.ntt.data.mcsv_cuentamovimientos.web.controller.CuentaController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;

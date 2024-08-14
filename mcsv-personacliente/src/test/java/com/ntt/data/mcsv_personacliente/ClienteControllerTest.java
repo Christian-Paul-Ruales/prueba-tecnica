@@ -2,7 +2,7 @@ package com.ntt.data.mcsv_personacliente;
 
 import com.ntt.data.mcsv_personacliente.domain.dto.ClienteDTO;
 import com.ntt.data.mcsv_personacliente.domain.exception.DomainException;
-import com.ntt.data.mcsv_personacliente.domain.service.ClienteService;
+import com.ntt.data.mcsv_personacliente.domain.service.impl.ClienteService;
 import com.ntt.data.mcsv_personacliente.web.controller.ClienteController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

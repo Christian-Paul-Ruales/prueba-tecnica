@@ -5,6 +5,9 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.repository.ICuentaRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.crud.CuentaCrudRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.mapper.CuentaMapper;
+import com.ntt.data.mcsv_cuentamovimientos.web.controller.CuentaController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +19,7 @@ public class CuentaRepository implements ICuentaRepository {
     @Autowired
     private CuentaCrudRepository cuentaCrudRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(CuentaRepository.class);
 
 
     @Override
@@ -53,7 +57,7 @@ public class CuentaRepository implements ICuentaRepository {
     @Override
     public List<CuentaDTO> getByClienteId(int id){
         List<Cuenta> lstCuentas = cuentaCrudRepository.findByClienteId(id);
-
+        logger.info(String.format("Cliente %s se encontraron %s cuentas",id, lstCuentas.size()));
         return CuentaMapper.INSTANCE.getDTOs(lstCuentas);
     }
 
