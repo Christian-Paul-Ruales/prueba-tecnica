@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -24,14 +25,18 @@ public class CuentaService implements ICuentaService {
 
     private final ICuentaRepository cuentaRepository;
 
-    private final ClienteClient clienteClient;
-
     private final CuentaUtil cuentaUtil;
 
 
     @Override
     public List<CuentaDTO> getAll(){
-        return cuentaRepository.getAll();
+
+        return cuentaRepository.getAll().stream().map(
+                cuentaDTO -> {
+                    cuentaDTO = cuentaUtil.procesarBusquedaCliente(cuentaDTO);
+                    return cuentaDTO;
+                }
+        ).collect(Collectors.toList());
     }
 
     @Override
@@ -39,14 +44,8 @@ public class CuentaService implements ICuentaService {
         CuentaDTO cuentaDTO = cuentaRepository.getById(id).orElseThrow(
                 () -> new DomainException(String.format(DominioConstantes.MSG_CUENTA_NO_ENCONTRADO, id))
         );
-        /**
-         * Consumo de datos del cliente que se encuentra en el otro microservicio
-         * */
-        ClienteDTO clienteDTO = clienteClient.getById(cuentaDTO.getClienteId());
-        log.info(String.format("Se realizó la consulta de información  del microservicio cliente %s desde el metodo getById", cuentaDTO.getClienteId()));
-        cuentaDTO.setClienteNombre(clienteDTO.getNombre());
 
-        return cuentaDTO;
+        return cuentaUtil.procesarBusquedaCliente(cuentaDTO);
     }
 
     @Override
@@ -54,21 +53,19 @@ public class CuentaService implements ICuentaService {
         String numeroCuenta = cuentaUtil.generarCuenta(DominioConstantes.TAMANO_CUENTA);
         cuentaDTO.setNumeroCuenta(numeroCuenta);
         cuentaDTO.setSaldoActual(cuentaDTO.getSaldoInicial());
-        CuentaDTO cuentaGuardadaDTO = cuentaRepository.save(cuentaDTO);
 
-        // obtener el nombre del cliente
-        ClienteDTO clienteDTO = clienteClient.getById(cuentaGuardadaDTO.getClienteId());
+        CuentaDTO cuentaDTOguardada = cuentaRepository.save(cuentaDTO);
 
-        log.info(String.format("Se realizó la consulta de información  del microservicio cliente %s desde el metodo save", cuentaDTO.getClienteId()));
 
-        cuentaGuardadaDTO.setClienteNombre(clienteDTO.getNombre());
-        return cuentaGuardadaDTO;
+        return cuentaUtil.procesarBusquedaCliente(cuentaDTOguardada);
 
     }
 
     @Override
     public CuentaDTO update(CuentaDTO cuentaDTO){
-        return cuentaRepository.update(cuentaDTO);
+        cuentaDTO =cuentaRepository.update(cuentaDTO);
+        return cuentaUtil.procesarBusquedaCliente(cuentaDTO);
+
     }
 
     @Override
@@ -80,6 +77,11 @@ public class CuentaService implements ICuentaService {
 
     @Override
     public List<CuentaDTO> getByClienteId(int id){
-        return cuentaRepository.getByClienteId(id);
+        return  cuentaRepository.getByClienteId(id).stream().map(
+                cuentaDTO -> {
+                    cuentaDTO = cuentaUtil.procesarBusquedaCliente(cuentaDTO);
+                    return cuentaDTO;
+                }
+        ).collect(Collectors.toList());
     }
 }
