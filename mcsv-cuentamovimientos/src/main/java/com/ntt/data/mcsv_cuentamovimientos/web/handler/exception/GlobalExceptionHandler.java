@@ -1,11 +1,15 @@
 package com.ntt.data.mcsv_cuentamovimientos.web.handler.exception;
 
+import com.ntt.data.mcsv_cuentamovimientos.domain.exception.DomainException;
 import com.ntt.data.mcsv_cuentamovimientos.web.handler.bean.ErrorBean;
 import com.ntt.data.mcsv_cuentamovimientos.web.handler.bean.ResponseBean;
+import feign.FeignException;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.ws.rs.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.ParseException;
 import org.hibernate.service.spi.ServiceException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -13,12 +17,13 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Slf4j
 @RestControllerAdvice
-public class CommonExceptionHandler {
+public class GlobalExceptionHandler {
 
     @ExceptionHandler(ParseException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -53,7 +58,7 @@ public class CommonExceptionHandler {
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
         res.getErrors().add(new ErrorBean("E0003",ex.getMessage()));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
     }
 
     @ExceptionHandler(ServiceException.class)
@@ -65,7 +70,54 @@ public class CommonExceptionHandler {
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
         res.getErrors().add(new ErrorBean("E0004",ex.getMessage()));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
+    }
+
+    @ExceptionHandler(DomainException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleDomainException(DomainException ex) {
+        log.info("Excepcion ServiceException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("E0005",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleIConstraintViolationException(ConstraintViolationException ex) {
+        log.info("Excepcion IllegalStateException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("SQL01",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
+    }
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException ex) {
+        log.info("Excepcion IllegalStateException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("SQL01",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
+    }
+
+    @ExceptionHandler(FeignException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleFeignException(FeignException ex) {
+        log.info("Excepcion FeignException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("F0001",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
     }
 
     @ExceptionHandler(IllegalStateException.class)
@@ -76,8 +128,8 @@ public class CommonExceptionHandler {
         ResponseBean res = new ResponseBean();
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
-        res.getErrors().add(new ErrorBean("E0004",ex.getMessage()));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        res.getErrors().add(new ErrorBean("E0006",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
     }
 
     @ExceptionHandler(Exception.class)
@@ -89,6 +141,6 @@ public class CommonExceptionHandler {
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
         res.getErrors().add(new ErrorBean("E0005",ex.getMessage()));
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(res);
     }
 }

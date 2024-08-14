@@ -13,6 +13,6 @@ public class DominioConstantes {
     public static String MOVIMIENTO_DEPOSITO = "DEPOSITO";
     public static Integer TAMANO_CUENTA=6;
 
-    public static String PTR_FECHA_PATH = "yyyyMMdd";
+    public static String PTR_FECHA_PATH = "yyyy-MM-dd";
 
 }

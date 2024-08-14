@@ -1,12 +1,15 @@
-package com.ntt.data.mcsv_personacliente.web.controller.handler.exception;
+package com.ntt.data.mcsv_personacliente.web.handler.exception;
 
 
-import com.ntt.data.mcsv_personacliente.web.controller.handler.bean.ErrorBean;
-import com.ntt.data.mcsv_personacliente.web.controller.handler.bean.ResponseBean;
+import com.ntt.data.mcsv_personacliente.domain.exception.DomainException;
+import com.ntt.data.mcsv_personacliente.web.handler.bean.ErrorBean;
+import com.ntt.data.mcsv_personacliente.web.handler.bean.ResponseBean;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.ws.rs.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.ParseException;
 import org.hibernate.service.spi.ServiceException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -14,11 +17,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Date;
 @Slf4j
 @RestControllerAdvice
-public class CommonExceptionHandler {
+public class GlobalExceptionHandler {
 
     @ExceptionHandler(ParseException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -67,7 +71,17 @@ public class CommonExceptionHandler {
         res.getErrors().add(new ErrorBean("E0004",ex.getMessage()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
     }
+    @ExceptionHandler(DomainException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleDomainException(DomainException ex) {
+        log.info("Excepcion ServiceException iniciada en handlerexception...");
 
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("E0005",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+    }
     @ExceptionHandler(IllegalStateException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ResponseBean> handleIlegalException(IllegalStateException ex) {
@@ -76,9 +90,34 @@ public class CommonExceptionHandler {
         ResponseBean res = new ResponseBean();
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
-        res.getErrors().add(new ErrorBean("E0004",ex.getMessage()));
+        res.getErrors().add(new ErrorBean("E0006",ex.getMessage()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
     }
+
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleIConstraintViolationException(ConstraintViolationException ex) {
+        log.info("Excepcion onstraintViolationException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("SQL01",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+    }
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ResponseBean> handleSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException ex) {
+        log.info("Excepcion IllegalStateException iniciada en handlerexception...");
+
+        ResponseBean res = new ResponseBean();
+        res.setTimestamp(new Date().getTime());
+        res.setErrors(new ArrayList<>());
+        res.getErrors().add(new ErrorBean("SQL01",ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+    }
+
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -88,7 +127,7 @@ public class CommonExceptionHandler {
         ResponseBean res = new ResponseBean();
         res.setTimestamp(new Date().getTime());
         res.setErrors(new ArrayList<>());
-        res.getErrors().add(new ErrorBean("E0005",ex.getMessage()));
+        res.getErrors().add(new ErrorBean("E0007",ex.getMessage()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
     }
 }

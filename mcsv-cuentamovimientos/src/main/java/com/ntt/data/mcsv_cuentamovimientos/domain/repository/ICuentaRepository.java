@@ -1,20 +1,20 @@
 package com.ntt.data.mcsv_cuentamovimientos.domain.repository;
 
-import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ICuentaRepository {
-    List<CuentaDTO> getAll();
+    List<Cuenta> getAll();
 
-    Optional<CuentaDTO> getById(int id);
+    Optional<Cuenta> getById(int id);
 
-    CuentaDTO save(CuentaDTO cuenta);
-    CuentaDTO update(CuentaDTO cuenta);
+    Cuenta save(Cuenta cuenta);
+    Cuenta update(Cuenta cuenta);
 
     void delete(int id);
 
-    List<CuentaDTO> getByClienteId(int clienteId);
+    List<Cuenta> getByClienteId(int clienteId);
 
 }

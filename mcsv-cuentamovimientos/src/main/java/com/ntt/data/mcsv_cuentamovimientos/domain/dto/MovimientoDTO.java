@@ -24,7 +24,6 @@ public class MovimientoDTO {
     @NotNull
     private Double valor;
 
-    @NotNull
     private Double saldo;
 
     @NotNull

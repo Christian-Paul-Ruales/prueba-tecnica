@@ -25,7 +25,7 @@ public class PersonaDTO {
     @Size(max=100, message = "La dirección tiene un tamaño maximo de 100 caracteres")
     private String direccion;
 
-    @Size(max=10, min = 10, message = "Telefono debe contener entre 9 y 10 digitos")
+    @Size(max=10, min = 9, message = "Telefono debe contener entre 9 y 10 digitos")
     private String telefono;
 
 

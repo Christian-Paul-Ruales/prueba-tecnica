@@ -1,0 +1,447 @@
+2024-08-14 10:26:13 INFO  c.n.d.d.DiscoveryServerApplication - Starting DiscoveryServerApplication using Java 17.0.12 with PID 603922 (/home/christian/Descargas/prueba_tecnica/discovery-server/target/classes started by christian in /home/christian/Descargas/prueba_tecnica/discovery-server)
+2024-08-14 10:26:13 INFO  c.n.d.d.DiscoveryServerApplication - No active profile set, falling back to 1 default profile: "default"
+2024-08-14 10:26:16 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=af4abf12-fbcb-3566-a8b4-a6a69f55a0d7
+2024-08-14 10:26:16 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-08-14 10:26:16 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-08-14 10:26:16 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8761 (http)
+2024-08-14 10:26:16 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8761"]
+2024-08-14 10:26:16 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-08-14 10:26:16 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-14 10:26:16 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-08-14 10:26:16 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3313 ms
+2024-08-14 10:26:18 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-08-14 10:26:18 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-08-14 10:26:20 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-08-14 10:26:20 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-08-14 10:26:22 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-08-14 10:26:22 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-08-14 10:26:22 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-08-14 10:26:22 INFO  c.netflix.discovery.DiscoveryClient - Client configured to neither register nor query for data.
+2024-08-14 10:26:22 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1723649182391 with initial instances count: 0
+2024-08-14 10:26:22 INFO  c.n.e.DefaultEurekaServerContext - Initializing ...
+2024-08-14 10:26:22 INFO  c.n.eureka.cluster.PeerEurekaNodes - Adding new peer nodes [http://localhost:8761/eureka/]
+2024-08-14 10:26:22 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2024-08-14 10:26:22 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2024-08-14 10:26:22 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2024-08-14 10:26:22 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2024-08-14 10:26:22 INFO  c.n.eureka.cluster.PeerEurekaNodes - Replica node URL:  http://localhost:8761/eureka/
+2024-08-14 10:26:22 INFO  c.n.e.r.AbstractInstanceRegistry - Finished initializing remote region registries. All known remote regions: []
+2024-08-14 10:26:22 INFO  c.n.e.DefaultEurekaServerContext - Initialized
+2024-08-14 10:26:22 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-08-14 10:26:22 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application DISCOVERY-SERVER with eureka with status UP
+2024-08-14 10:26:22 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8761"]
+2024-08-14 10:26:22 INFO  o.s.c.n.e.s.EurekaServerBootstrap - isAws returned false
+2024-08-14 10:26:22 INFO  o.s.c.n.e.s.EurekaServerBootstrap - Initialized server context
+2024-08-14 10:26:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Got 1 instances from neighboring DS node
+2024-08-14 10:26:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Renew threshold is: 1
+2024-08-14 10:26:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Changing status to UP
+2024-08-14 10:26:22 INFO  o.s.c.n.e.s.EurekaServerInitializerConfiguration - Started Eureka Server
+2024-08-14 10:26:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8761 (http) with context path '/'
+2024-08-14 10:26:22 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8761
+2024-08-14 10:26:22 INFO  c.n.d.d.DiscoveryServerApplication - Started DiscoveryServerApplication in 10.547 seconds (process running for 11.694)
+2024-08-14 10:26:26 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-14 10:26:26 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-14 10:26:26 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-08-14 10:26:26 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: MCSV-PERSONACLIENTE - mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942
+2024-08-14 10:26:26 WARN  c.n.e.resources.InstanceResource - Not Found (Renew): MCSV-PERSONACLIENTE - mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942
+2024-08-14 10:26:26 WARN  c.n.e.r.AbstractInstanceRegistry - There is an existing lease and the existing lease's dirty timestamp 1723649186617 is greater than the one that is being registered 1723649156348
+2024-08-14 10:26:26 WARN  c.n.e.r.AbstractInstanceRegistry - Using the existing instanceInfo instead of the new instanceInfo as the registrant
+2024-08-14 10:26:26 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 with status UP (replication=false)
+2024-08-14 10:26:26 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 with status UP (replication=false)
+2024-08-14 10:26:27 WARN  c.n.e.r.AbstractInstanceRegistry - There is an existing lease and the existing lease's dirty timestamp 1723649186617 is greater than the one that is being registered 1723649156348
+2024-08-14 10:26:27 WARN  c.n.e.r.AbstractInstanceRegistry - Using the existing instanceInfo instead of the new instanceInfo as the registrant
+2024-08-14 10:26:27 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 with status UP (replication=true)
+2024-08-14 10:26:30 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: API-GATEWAY - api-gateway:20ba2597-aeb0-4d79-b075-bbe6410f0eee
+2024-08-14 10:26:30 WARN  c.n.e.resources.InstanceResource - Not Found (Renew): API-GATEWAY - api-gateway:20ba2597-aeb0-4d79-b075-bbe6410f0eee
+2024-08-14 10:26:31 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance API-GATEWAY/api-gateway:20ba2597-aeb0-4d79-b075-bbe6410f0eee with status UP (replication=false)
+2024-08-14 10:26:31 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance API-GATEWAY/api-gateway:20ba2597-aeb0-4d79-b075-bbe6410f0eee with status UP (replication=true)
+2024-08-14 10:26:46 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: lease doesn't exist, registering resource: MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f
+2024-08-14 10:26:46 WARN  c.n.e.resources.InstanceResource - Not Found (Renew): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f
+2024-08-14 10:26:46 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f with status UP (replication=false)
+2024-08-14 10:26:46 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f with status UP (replication=true)
+2024-08-14 10:27:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:28:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:29:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:30:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:31:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:32:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:33:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:34:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:35:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:35:48 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f with status DOWN (replication=false)
+2024-08-14 10:35:49 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f with status DOWN (replication=true)
+2024-08-14 10:35:51 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f (replication=false)
+2024-08-14 10:35:52 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f
+2024-08-14 10:35:52 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f
+2024-08-14 10:35:52 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f:Cancel@localhost failed with response code 404
+2024-08-14 10:35:52 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:33aaf5df-8c30-46fa-bf2b-61cde431094f:Cancel@localhost: missing entry.
+2024-08-14 10:36:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-08-14 10:37:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:38:04 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 with status DOWN (replication=false)
+2024-08-14 10:38:04 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 with status DOWN (replication=true)
+2024-08-14 10:38:07 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942 (replication=false)
+2024-08-14 10:38:07 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942
+2024-08-14 10:38:07 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942
+2024-08-14 10:38:07 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942:Cancel@localhost failed with response code 404
+2024-08-14 10:38:07 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:c046e411-fd86-4fce-bd79-e9735ae7f942:Cancel@localhost: missing entry.
+2024-08-14 10:38:21 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6 with status UP (replication=false)
+2024-08-14 10:38:22 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6 with status UP (replication=true)
+2024-08-14 10:38:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:38:31 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7 with status UP (replication=false)
+2024-08-14 10:38:31 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7 with status UP (replication=true)
+2024-08-14 10:39:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:39:43 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7 with status DOWN (replication=false)
+2024-08-14 10:39:44 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7 with status DOWN (replication=true)
+2024-08-14 10:39:46 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7 (replication=false)
+2024-08-14 10:39:47 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7
+2024-08-14 10:39:47 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7
+2024-08-14 10:39:47 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7:Cancel@localhost failed with response code 404
+2024-08-14 10:39:47 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:9f5a83cc-2a6d-4a21-bb96-13f43569b1c7:Cancel@localhost: missing entry.
+2024-08-14 10:40:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:40:44 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6 with status DOWN (replication=false)
+2024-08-14 10:40:45 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6 with status DOWN (replication=true)
+2024-08-14 10:40:47 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6 (replication=false)
+2024-08-14 10:40:48 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6
+2024-08-14 10:40:48 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6
+2024-08-14 10:40:48 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6:Cancel@localhost failed with response code 404
+2024-08-14 10:40:48 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:a95c17a4-a649-48af-89ff-284fe7743ad6:Cancel@localhost: missing entry.
+2024-08-14 10:41:00 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52 with status UP (replication=false)
+2024-08-14 10:41:00 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52 with status UP (replication=true)
+2024-08-14 10:41:13 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272 with status UP (replication=false)
+2024-08-14 10:41:14 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272 with status UP (replication=true)
+2024-08-14 10:41:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-08-14 10:41:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:42:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:43:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:44:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:45:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:45:39 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52 with status DOWN (replication=false)
+2024-08-14 10:45:40 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52 with status DOWN (replication=true)
+2024-08-14 10:45:42 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52 (replication=false)
+2024-08-14 10:45:43 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52
+2024-08-14 10:45:43 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52
+2024-08-14 10:45:43 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52:Cancel@localhost failed with response code 404
+2024-08-14 10:45:43 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8272023f-8d86-4ee7-9874-71182134bf52:Cancel@localhost: missing entry.
+2024-08-14 10:45:54 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272 with status DOWN (replication=false)
+2024-08-14 10:45:54 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272 with status DOWN (replication=true)
+2024-08-14 10:45:57 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272 (replication=false)
+2024-08-14 10:45:57 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272
+2024-08-14 10:45:57 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272
+2024-08-14 10:45:57 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272:Cancel@localhost failed with response code 404
+2024-08-14 10:45:57 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:a8360245-0424-4720-845a-a02f3882c272:Cancel@localhost: missing entry.
+2024-08-14 10:46:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:47:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b with status UP (replication=false)
+2024-08-14 10:47:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b with status UP (replication=true)
+2024-08-14 10:47:15 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62 with status UP (replication=false)
+2024-08-14 10:47:15 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62 with status UP (replication=true)
+2024-08-14 10:47:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:48:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:49:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:50:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:51:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:51:40 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b with status DOWN (replication=false)
+2024-08-14 10:51:41 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b with status DOWN (replication=true)
+2024-08-14 10:51:43 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b (replication=false)
+2024-08-14 10:51:44 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b
+2024-08-14 10:51:44 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b
+2024-08-14 10:51:44 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b:Cancel@localhost failed with response code 404
+2024-08-14 10:51:44 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:466555c5-4007-46a5-afbb-b0382a59c55b:Cancel@localhost: missing entry.
+2024-08-14 10:52:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:52:32 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae with status UP (replication=false)
+2024-08-14 10:52:32 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae with status UP (replication=true)
+2024-08-14 10:53:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:54:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:54:57 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62 with status DOWN (replication=false)
+2024-08-14 10:54:57 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62 with status DOWN (replication=true)
+2024-08-14 10:55:00 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62 (replication=false)
+2024-08-14 10:55:00 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62
+2024-08-14 10:55:00 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62
+2024-08-14 10:55:00 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62:Cancel@localhost failed with response code 404
+2024-08-14 10:55:00 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:b97481f6-fb82-4291-83c0-0a8261abcf62:Cancel@localhost: missing entry.
+2024-08-14 10:55:22 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921 with status UP (replication=false)
+2024-08-14 10:55:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:55:23 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921 with status UP (replication=true)
+2024-08-14 10:55:47 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921 with status DOWN (replication=false)
+2024-08-14 10:55:47 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921 with status DOWN (replication=true)
+2024-08-14 10:55:50 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921 (replication=false)
+2024-08-14 10:55:50 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921
+2024-08-14 10:55:50 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921
+2024-08-14 10:55:50 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921:Cancel@localhost failed with response code 404
+2024-08-14 10:55:50 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:d037608b-cca4-4287-8590-f61af3c18921:Cancel@localhost: missing entry.
+2024-08-14 10:56:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35 with status UP (replication=false)
+2024-08-14 10:56:03 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35 with status UP (replication=true)
+2024-08-14 10:56:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-08-14 10:56:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:57:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:58:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 10:58:57 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35 with status DOWN (replication=false)
+2024-08-14 10:58:57 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35 with status DOWN (replication=true)
+2024-08-14 10:59:00 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35 (replication=false)
+2024-08-14 10:59:00 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35
+2024-08-14 10:59:00 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35
+2024-08-14 10:59:00 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35:Cancel@localhost failed with response code 404
+2024-08-14 10:59:00 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:6eb86fbb-80fb-4541-83b3-bef443affa35:Cancel@localhost: missing entry.
+2024-08-14 10:59:18 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25 with status UP (replication=false)
+2024-08-14 10:59:18 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25 with status UP (replication=true)
+2024-08-14 10:59:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:00:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:01:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:02:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:03:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae with status DOWN (replication=false)
+2024-08-14 11:03:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae with status DOWN (replication=true)
+2024-08-14 11:03:05 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae (replication=false)
+2024-08-14 11:03:05 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae
+2024-08-14 11:03:05 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae
+2024-08-14 11:03:05 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae:Cancel@localhost failed with response code 404
+2024-08-14 11:03:05 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:86d13e9e-6466-43fc-a1b3-8b8c6a978fae:Cancel@localhost: missing entry.
+2024-08-14 11:03:21 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042 with status UP (replication=false)
+2024-08-14 11:03:21 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042 with status UP (replication=true)
+2024-08-14 11:03:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:04:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042 with status DOWN (replication=false)
+2024-08-14 11:04:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042 with status DOWN (replication=true)
+2024-08-14 11:04:04 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042 (replication=false)
+2024-08-14 11:04:04 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042
+2024-08-14 11:04:04 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042
+2024-08-14 11:04:04 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042:Cancel@localhost failed with response code 404
+2024-08-14 11:04:04 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:67f35abc-0682-4b03-a11b-46f70152e042:Cancel@localhost: missing entry.
+2024-08-14 11:04:05 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25 with status DOWN (replication=false)
+2024-08-14 11:04:06 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25 with status DOWN (replication=true)
+2024-08-14 11:04:09 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25 (replication=false)
+2024-08-14 11:04:09 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25
+2024-08-14 11:04:09 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25
+2024-08-14 11:04:09 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25:Cancel@localhost failed with response code 404
+2024-08-14 11:04:09 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:31d67686-daf2-4aaa-a52e-25342862ac25:Cancel@localhost: missing entry.
+2024-08-14 11:04:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:04:25 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe with status UP (replication=false)
+2024-08-14 11:04:26 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe with status UP (replication=true)
+2024-08-14 11:04:35 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5 with status UP (replication=false)
+2024-08-14 11:04:36 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5 with status UP (replication=true)
+2024-08-14 11:05:00 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe with status DOWN (replication=false)
+2024-08-14 11:05:00 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe with status DOWN (replication=true)
+2024-08-14 11:05:03 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe (replication=false)
+2024-08-14 11:05:03 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe
+2024-08-14 11:05:03 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe
+2024-08-14 11:05:03 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe:Cancel@localhost failed with response code 404
+2024-08-14 11:05:03 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:f040bd55-7670-4827-a2c0-5a5b01e34cbe:Cancel@localhost: missing entry.
+2024-08-14 11:05:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:06:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:07:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:08:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:09:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:10:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:11:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 5
+2024-08-14 11:11:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:12:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:13:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:14:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:15:15 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc with status UP (replication=false)
+2024-08-14 11:15:15 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc with status UP (replication=true)
+2024-08-14 11:15:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:15:24 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5 with status DOWN (replication=false)
+2024-08-14 11:15:24 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5 with status DOWN (replication=true)
+2024-08-14 11:15:27 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5 (replication=false)
+2024-08-14 11:15:27 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5
+2024-08-14 11:15:27 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5
+2024-08-14 11:15:27 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5:Cancel@localhost failed with response code 404
+2024-08-14 11:15:27 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:7691f6e0-88a9-40b4-a142-f926eb3356e5:Cancel@localhost: missing entry.
+2024-08-14 11:15:38 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004 with status UP (replication=false)
+2024-08-14 11:15:38 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004 with status UP (replication=true)
+2024-08-14 11:16:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:17:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:18:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:18:25 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc with status DOWN (replication=false)
+2024-08-14 11:18:26 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc with status DOWN (replication=true)
+2024-08-14 11:18:28 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc (replication=false)
+2024-08-14 11:18:29 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc
+2024-08-14 11:18:29 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc
+2024-08-14 11:18:29 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc:Cancel@localhost failed with response code 404
+2024-08-14 11:18:29 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:eaa29899-2317-4384-84a1-7478c27a12bc:Cancel@localhost: missing entry.
+2024-08-14 11:18:45 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0 with status UP (replication=false)
+2024-08-14 11:18:46 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0 with status UP (replication=true)
+2024-08-14 11:19:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:20:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:21:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:22:07 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0 with status DOWN (replication=false)
+2024-08-14 11:22:08 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0 with status DOWN (replication=true)
+2024-08-14 11:22:10 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0 (replication=false)
+2024-08-14 11:22:11 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0
+2024-08-14 11:22:11 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0
+2024-08-14 11:22:11 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0:Cancel@localhost failed with response code 404
+2024-08-14 11:22:11 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:816375e2-586a-44a1-9827-41bddb0cdeb0:Cancel@localhost: missing entry.
+2024-08-14 11:22:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:22:25 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13 with status UP (replication=false)
+2024-08-14 11:22:26 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13 with status UP (replication=true)
+2024-08-14 11:22:40 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13 with status DOWN (replication=false)
+2024-08-14 11:22:40 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13 with status DOWN (replication=true)
+2024-08-14 11:22:43 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13 (replication=false)
+2024-08-14 11:22:44 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13
+2024-08-14 11:22:44 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13
+2024-08-14 11:22:44 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13:Cancel@localhost failed with response code 404
+2024-08-14 11:22:44 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:6f75aca7-69f9-4c85-922d-c9af4c0eae13:Cancel@localhost: missing entry.
+2024-08-14 11:23:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d with status UP (replication=false)
+2024-08-14 11:23:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d with status UP (replication=true)
+2024-08-14 11:23:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:23:35 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d with status DOWN (replication=false)
+2024-08-14 11:23:35 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d with status DOWN (replication=true)
+2024-08-14 11:23:38 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d (replication=false)
+2024-08-14 11:23:38 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d
+2024-08-14 11:23:38 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d
+2024-08-14 11:23:38 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d:Cancel@localhost failed with response code 404
+2024-08-14 11:23:38 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:08a35c16-05e0-495a-ac7e-a57d93938f2d:Cancel@localhost: missing entry.
+2024-08-14 11:23:50 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0 with status UP (replication=false)
+2024-08-14 11:23:51 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0 with status UP (replication=true)
+2024-08-14 11:24:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:25:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:26:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-08-14 11:26:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:27:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:28:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:28:36 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0 with status DOWN (replication=false)
+2024-08-14 11:28:37 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0 with status DOWN (replication=true)
+2024-08-14 11:28:39 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0 (replication=false)
+2024-08-14 11:28:40 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0
+2024-08-14 11:28:40 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0
+2024-08-14 11:28:40 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0:Cancel@localhost failed with response code 404
+2024-08-14 11:28:40 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:0b6b331d-5a4c-4216-a7ef-1353f21cd3d0:Cancel@localhost: missing entry.
+2024-08-14 11:29:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004 with status DOWN (replication=false)
+2024-08-14 11:29:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004 with status DOWN (replication=true)
+2024-08-14 11:29:05 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004 (replication=false)
+2024-08-14 11:29:06 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004
+2024-08-14 11:29:06 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004
+2024-08-14 11:29:06 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004:Cancel@localhost failed with response code 404
+2024-08-14 11:29:06 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:924f9727-9a82-42f7-ac38-7c27622c6004:Cancel@localhost: missing entry.
+2024-08-14 11:29:21 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3 with status UP (replication=false)
+2024-08-14 11:29:22 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3 with status UP (replication=true)
+2024-08-14 11:29:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:29:30 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118 with status UP (replication=false)
+2024-08-14 11:29:31 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118 with status UP (replication=true)
+2024-08-14 11:29:54 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118 with status DOWN (replication=false)
+2024-08-14 11:29:55 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118 with status DOWN (replication=true)
+2024-08-14 11:29:57 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118 (replication=false)
+2024-08-14 11:29:58 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118
+2024-08-14 11:29:58 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118
+2024-08-14 11:29:58 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118:Cancel@localhost failed with response code 404
+2024-08-14 11:29:58 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:4e2f6e35-90d6-4543-855f-dc687199d118:Cancel@localhost: missing entry.
+2024-08-14 11:30:07 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549 with status UP (replication=false)
+2024-08-14 11:30:08 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549 with status UP (replication=true)
+2024-08-14 11:30:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:31:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:31:36 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549 with status DOWN (replication=false)
+2024-08-14 11:31:37 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549 with status DOWN (replication=true)
+2024-08-14 11:31:39 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549 (replication=false)
+2024-08-14 11:31:40 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549
+2024-08-14 11:31:40 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549
+2024-08-14 11:31:40 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549:Cancel@localhost failed with response code 404
+2024-08-14 11:31:40 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:9de98708-2b5d-442e-b2db-d4bcc6c04549:Cancel@localhost: missing entry.
+2024-08-14 11:31:49 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3 with status DOWN (replication=false)
+2024-08-14 11:31:50 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3 with status DOWN (replication=true)
+2024-08-14 11:31:52 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3 (replication=false)
+2024-08-14 11:31:53 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3
+2024-08-14 11:31:53 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3
+2024-08-14 11:31:53 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3:Cancel@localhost failed with response code 404
+2024-08-14 11:31:53 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:19fcdfc4-22a0-490b-b04b-b722088a23c3:Cancel@localhost: missing entry.
+2024-08-14 11:31:59 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64 with status UP (replication=false)
+2024-08-14 11:32:00 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64 with status UP (replication=true)
+2024-08-14 11:32:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:32:22 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4 with status UP (replication=false)
+2024-08-14 11:32:23 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4 with status UP (replication=true)
+2024-08-14 11:33:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:34:11 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4 with status DOWN (replication=false)
+2024-08-14 11:34:11 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4 with status DOWN (replication=true)
+2024-08-14 11:34:14 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4 (replication=false)
+2024-08-14 11:34:14 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4
+2024-08-14 11:34:14 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4
+2024-08-14 11:34:14 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4:Cancel@localhost failed with response code 404
+2024-08-14 11:34:14 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:cd357f35-5889-4893-84e7-c29b7c542ea4:Cancel@localhost: missing entry.
+2024-08-14 11:34:16 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64 with status DOWN (replication=false)
+2024-08-14 11:34:17 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64 with status DOWN (replication=true)
+2024-08-14 11:34:19 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64 (replication=false)
+2024-08-14 11:34:20 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64
+2024-08-14 11:34:20 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64
+2024-08-14 11:34:20 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64:Cancel@localhost failed with response code 404
+2024-08-14 11:34:20 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:215d9859-6601-4614-ab19-221c2f32fa64:Cancel@localhost: missing entry.
+2024-08-14 11:34:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:34:35 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b with status UP (replication=false)
+2024-08-14 11:34:36 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b with status UP (replication=true)
+2024-08-14 11:34:44 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3 with status UP (replication=false)
+2024-08-14 11:34:45 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3 with status UP (replication=true)
+2024-08-14 11:35:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:36:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-08-14 11:37:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:37:38 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b with status DOWN (replication=false)
+2024-08-14 11:37:39 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b with status DOWN (replication=true)
+2024-08-14 11:37:41 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b (replication=false)
+2024-08-14 11:37:42 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b
+2024-08-14 11:37:42 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b
+2024-08-14 11:37:42 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b:Cancel@localhost failed with response code 404
+2024-08-14 11:37:42 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:ac902c67-3677-4d3b-86c8-62cc8eba969b:Cancel@localhost: missing entry.
+2024-08-14 11:38:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e with status UP (replication=false)
+2024-08-14 11:38:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e with status UP (replication=true)
+2024-08-14 11:38:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:39:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:40:06 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3 with status DOWN (replication=false)
+2024-08-14 11:40:07 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3 with status DOWN (replication=true)
+2024-08-14 11:40:09 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3 (replication=false)
+2024-08-14 11:40:10 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3
+2024-08-14 11:40:10 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3
+2024-08-14 11:40:10 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3:Cancel@localhost failed with response code 404
+2024-08-14 11:40:10 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:8b11d894-cb0c-425e-bad6-3c02e857fca3:Cancel@localhost: missing entry.
+2024-08-14 11:40:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:40:24 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a with status UP (replication=false)
+2024-08-14 11:40:25 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a with status UP (replication=true)
+2024-08-14 11:41:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-08-14 11:41:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:42:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:43:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:44:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:45:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:46:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:46:56 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e with status DOWN (replication=false)
+2024-08-14 11:46:57 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e with status DOWN (replication=true)
+2024-08-14 11:46:59 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e (replication=false)
+2024-08-14 11:47:00 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e
+2024-08-14 11:47:00 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e
+2024-08-14 11:47:00 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e:Cancel@localhost failed with response code 404
+2024-08-14 11:47:00 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:5d62687d-5cae-4911-b833-899f8ea6641e:Cancel@localhost: missing entry.
+2024-08-14 11:47:16 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f with status UP (replication=false)
+2024-08-14 11:47:17 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f with status UP (replication=true)
+2024-08-14 11:47:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:47:33 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f with status DOWN (replication=false)
+2024-08-14 11:47:34 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f with status DOWN (replication=true)
+2024-08-14 11:47:36 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f (replication=false)
+2024-08-14 11:47:37 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f
+2024-08-14 11:47:37 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-PERSONACLIENTE - mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f
+2024-08-14 11:47:37 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f:Cancel@localhost failed with response code 404
+2024-08-14 11:47:37 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-PERSONACLIENTE/mcsv-personacliente:b1526f46-d4a4-4744-abdc-915ff486397f:Cancel@localhost: missing entry.
+2024-08-14 11:47:48 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9cf2c661-53f7-469e-95ec-3297c352dda8 with status UP (replication=false)
+2024-08-14 11:47:49 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-PERSONACLIENTE/mcsv-personacliente:9cf2c661-53f7-469e-95ec-3297c352dda8 with status UP (replication=true)
+2024-08-14 11:48:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:49:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:50:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:50:58 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a with status DOWN (replication=false)
+2024-08-14 11:50:59 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a with status DOWN (replication=true)
+2024-08-14 11:51:02 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a (replication=false)
+2024-08-14 11:51:02 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a
+2024-08-14 11:51:02 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a
+2024-08-14 11:51:02 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a:Cancel@localhost failed with response code 404
+2024-08-14 11:51:02 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:6ca4f705-072c-435d-b819-7de56604210a:Cancel@localhost: missing entry.
+2024-08-14 11:51:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 1ms
+2024-08-14 11:51:30 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac with status UP (replication=false)
+2024-08-14 11:51:30 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac with status UP (replication=true)
+2024-08-14 11:52:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:53:01 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac with status DOWN (replication=false)
+2024-08-14 11:53:02 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac with status DOWN (replication=true)
+2024-08-14 11:53:04 INFO  c.n.e.r.AbstractInstanceRegistry - Cancelled instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac (replication=false)
+2024-08-14 11:53:05 WARN  c.n.e.r.AbstractInstanceRegistry - DS: Registry: cancel failed because Lease is not registered for: MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac
+2024-08-14 11:53:05 INFO  c.n.e.resources.InstanceResource - Not Found (Cancel): MCSV-CUENTAMOVIMIENTOS - mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac
+2024-08-14 11:53:05 WARN  c.n.eureka.cluster.ReplicationTask - The replication of task MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac:Cancel@localhost failed with response code 404
+2024-08-14 11:53:05 WARN  c.n.eureka.cluster.PeerEurekaNode - MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:f6bf2e6f-4044-4746-a430-ab9268d573ac:Cancel@localhost: missing entry.
+2024-08-14 11:53:19 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:fa2e2b17-7567-42be-ba3c-c63c9ecfe3f3 with status UP (replication=false)
+2024-08-14 11:53:20 INFO  c.n.e.r.AbstractInstanceRegistry - Registered instance MCSV-CUENTAMOVIMIENTOS/mcsv-cuentamovimientos:fa2e2b17-7567-42be-ba3c-c63c9ecfe3f3 with status UP (replication=true)
+2024-08-14 11:53:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:54:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:55:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:56:22 INFO  c.n.e.r.PeerAwareInstanceRegistryImpl - Current renewal threshold is : 6
+2024-08-14 11:56:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:57:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms
+2024-08-14 11:58:22 INFO  c.n.e.r.AbstractInstanceRegistry - Running the evict task with compensationTime 0ms

@@ -20,8 +20,17 @@ public class ServiceUtil {
         return UUID.nameUUIDFromBytes(valor.getBytes()).toString()
                 .replace("-","");
     }
-
-
+    /**
+     * valida si el uuid es valido, devolviendo un boolean
+     * **/
+    public static boolean uuidValid(String uuidStr) {
+        try {
+            UUID uuid = UUID.fromString(uuidStr);
+            return uuid.toString().equals(uuidStr);
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
 
 
 }

@@ -58,7 +58,36 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "\n{       \"clienteId\": 3,\n        \"tipoCuenta\": \"CORRIENTE\",\n        \"saldoInicial\": 9901.12,\n        \"estado\": true\n    }",
+					"raw": "\n{       \"clienteId\": 3,\n        \"tipoCuenta\": \"CORRIENTE\",\n        \"saldoInicial\": 12311,\n        \"estado\": true\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exception cuentas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{       \"clienteId\": 3,\n        \"tipoCuenta\": \"CORRIENTE\",\n        \"saldoInicial\": 12311,\n        \"estado\": true\n    }",
 					"options": {
 						"raw": {
 							"language": "json"

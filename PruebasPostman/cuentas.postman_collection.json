@@ -131,7 +131,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\": 12,\n    \"clienteId\": 5,\n    \"clienteNombre\": \"Juan Rosales\",\n    \"numeroCuenta\": \"1811117115\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 12222.09,\n    \"saldoActual\": 12222.09,\n    \"estado\": true\n}",
+					"raw": "\n  {  \n    \"id\": 20,\n    \"clienteId\": 5,\n    \"clienteNombre\": \"Juan Rosales\",\n    \"numeroCuenta\": \"550675\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 199.09,\n    \"saldoActual\": 199.09,\n    \"estado\": true,\n    \"lstMovimientos\": null\n}",
 					"options": {
 						"raw": {
 							"language": "json"

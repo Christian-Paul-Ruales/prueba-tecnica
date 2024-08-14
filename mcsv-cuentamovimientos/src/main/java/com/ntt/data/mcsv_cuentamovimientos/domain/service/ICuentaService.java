@@ -12,7 +12,7 @@ public interface ICuentaService {
 
     CuentaDTO update(CuentaDTO cuentaDTO);
 
-    CuentaDTO delete(int id);
+    void delete(int id);
 
     List<CuentaDTO> getByClienteId(int id);
 }

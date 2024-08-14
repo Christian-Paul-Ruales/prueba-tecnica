@@ -5,9 +5,7 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.service.ICuentaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +22,16 @@ public class CuentaController {
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
-    public List<CuentaDTO> getAll(){
+    public ResponseEntity<List<CuentaDTO>> getAll(){
         log.info("Recibida la solicitud GET de todos los registros para /api/cuentas/all");
 
-        return cuentaService.getAll();
+        try {
+            return new ResponseEntity<>(cuentaService.getAll(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Excepcion al procesar la peticion GET all", e);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @GetMapping("/{id}")
@@ -38,7 +42,6 @@ public class CuentaController {
             return new ResponseEntity<>(cuentaService.getById(id), HttpStatus.OK);
         }catch (Exception e){
             log.error("Excepcion al procesar la peticion GET con id", e);
-
             return new ResponseEntity<>( HttpStatus.NOT_FOUND);
         }
 
@@ -56,7 +59,6 @@ public class CuentaController {
     public ResponseEntity update(@Valid @RequestBody CuentaDTO cuentaDTO){
         try {
             log.info("Recibida la solicitud PUT para la actualizacion de datos en /api/cuentas");
-
             return new ResponseEntity<>(cuentaService.update(cuentaDTO), HttpStatus.CREATED);
         }catch (Exception e){
             log.error("Excepcion al procesar la peticion PUT en /api/cuentas.", e);
@@ -68,8 +70,8 @@ public class CuentaController {
     public ResponseEntity delete(@PathVariable("id") int id){
         try {
             log.info("Recibida la solicitud DELETE para la eliminacion de datos en /api/cuentas");
-
-            return new ResponseEntity<>(cuentaService.delete(id), HttpStatus.OK);
+            cuentaService.delete(id);
+            return new ResponseEntity<>(HttpStatus.OK);
         }catch (Exception e){
             log.error("Excepcion al procesar la peticion DELETE en /api/cuentas.", e);
             return new ResponseEntity<>( HttpStatus.NOT_FOUND);

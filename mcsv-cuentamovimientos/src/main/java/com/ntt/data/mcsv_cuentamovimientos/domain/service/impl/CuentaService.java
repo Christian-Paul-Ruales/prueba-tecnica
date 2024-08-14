@@ -8,6 +8,8 @@ import com.ntt.data.mcsv_cuentamovimientos.domain.constantes.DominioConstantes;
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.exception.DomainException;
 import com.ntt.data.mcsv_cuentamovimientos.domain.repository.ICuentaRepository;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.mapper.CuentaMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -24,14 +26,13 @@ import java.util.stream.Collectors;
 public class CuentaService implements ICuentaService {
 
     private final ICuentaRepository cuentaRepository;
-
     private final CuentaUtil cuentaUtil;
-
+    private final CuentaMapper cuentaMapper;
 
     @Override
     public List<CuentaDTO> getAll(){
 
-        return cuentaRepository.getAll().stream().map(
+        return cuentaMapper.getDTOs(cuentaRepository.getAll()).stream().map(
                 cuentaDTO -> {
                     cuentaDTO = cuentaUtil.procesarBusquedaCliente(cuentaDTO);
                     return cuentaDTO;
@@ -41,11 +42,11 @@ public class CuentaService implements ICuentaService {
 
     @Override
     public CuentaDTO getById(int id){
-        CuentaDTO cuentaDTO = cuentaRepository.getById(id).orElseThrow(
+        Cuenta cuenta = cuentaRepository.getById(id).orElseThrow(
                 () -> new DomainException(String.format(DominioConstantes.MSG_CUENTA_NO_ENCONTRADO, id))
         );
 
-        return cuentaUtil.procesarBusquedaCliente(cuentaDTO);
+        return cuentaUtil.procesarBusquedaCliente(cuentaMapper.getDTO(cuenta));
     }
 
     @Override
@@ -54,8 +55,8 @@ public class CuentaService implements ICuentaService {
         cuentaDTO.setNumeroCuenta(numeroCuenta);
         cuentaDTO.setSaldoActual(cuentaDTO.getSaldoInicial());
 
-        CuentaDTO cuentaDTOguardada = cuentaRepository.save(cuentaDTO);
-
+        Cuenta cuenta = cuentaMapper.getEntidad(cuentaDTO);
+        CuentaDTO cuentaDTOguardada = cuentaMapper.getDTO(cuentaRepository.save(cuenta));
 
         return cuentaUtil.procesarBusquedaCliente(cuentaDTOguardada);
 
@@ -63,25 +64,22 @@ public class CuentaService implements ICuentaService {
 
     @Override
     public CuentaDTO update(CuentaDTO cuentaDTO){
-        cuentaDTO =cuentaRepository.update(cuentaDTO);
+        Cuenta cuenta = cuentaMapper.getEntidad(cuentaDTO);
+        cuentaDTO =cuentaMapper.getDTO(cuentaRepository.update(cuenta));
+
         return cuentaUtil.procesarBusquedaCliente(cuentaDTO);
 
     }
 
     @Override
-    public CuentaDTO delete(int id){
-        CuentaDTO cuentaDTO = getById(id);
+    public void delete(int id){
         cuentaRepository.delete(id);
-        return cuentaDTO;
     }
 
     @Override
     public List<CuentaDTO> getByClienteId(int id){
         return  cuentaRepository.getByClienteId(id).stream().map(
-                cuentaDTO -> {
-                    cuentaDTO = cuentaUtil.procesarBusquedaCliente(cuentaDTO);
-                    return cuentaDTO;
-                }
+                cuenta ->  cuentaUtil.procesarBusquedaCliente(cuentaMapper.getDTO(cuenta))
         ).collect(Collectors.toList());
     }
 }

@@ -12,10 +12,9 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface MovimientoMapper {
 
-    MovimientoMapper INSTANCE = Mappers.getMapper(MovimientoMapper.class);
 
     @Mappings({
             @Mapping(target="cuentaId.id", source = "cuentaId"),

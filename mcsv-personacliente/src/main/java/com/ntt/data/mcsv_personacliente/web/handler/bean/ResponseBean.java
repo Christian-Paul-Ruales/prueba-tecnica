@@ -1,4 +1,4 @@
-package com.ntt.data.mcsv_personacliente.web.controller.handler.bean;
+package com.ntt.data.mcsv_personacliente.web.handler.bean;
 
 import lombok.Getter;
 import lombok.Setter;

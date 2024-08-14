@@ -15,7 +15,7 @@ public interface IMovimientoService {
 
     MovimientoDTO update(MovimientoDTO movimientoDTO);
 
-    MovimientoDTO delete(int id);
+    void delete(int id);
 
     List<MovimientoDTO> getAllByCuentaId(int cuentaId);
 

@@ -20,31 +20,26 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Repository
 public class MovimientoRepository implements IMovimientoRepository {
+
     private final MovimientoCrudRepository movimientoCrudRepository;
 
-
-
     @Override
-    public List<MovimientoDTO> getAll() {
-        List<Movimiento> lstMovimientos = (List<Movimiento>) movimientoCrudRepository.findAll();
-        return MovimientoMapper.INSTANCE.getDTOs(lstMovimientos);
+    public List<Movimiento> getAll() {
+        return (List<Movimiento>) movimientoCrudRepository.findAll();
     }
 
     @Override
-    public Optional<MovimientoDTO> getById(int id) {
-        return movimientoCrudRepository.findById(id).map(
-                movimiento -> MovimientoMapper.INSTANCE.getDTO(movimiento)
-        );
+    public Optional<Movimiento> getById(int id) {
+        return movimientoCrudRepository.findById(id);
     }
 
     @Override
-    public MovimientoDTO save(MovimientoDTO movimientoDTO) {
-        Movimiento movimiento = movimientoCrudRepository.save(MovimientoMapper.INSTANCE.getEntidad(movimientoDTO));
-        return MovimientoMapper.INSTANCE.getDTO(movimiento);
+    public Movimiento save(Movimiento movimiento) {
+        return movimientoCrudRepository.save(movimiento);
     }
 
     @Override
-    public MovimientoDTO update(MovimientoDTO movimiento) {
+    public Movimiento update(Movimiento movimiento) {
         return save(movimiento);
     }
 
@@ -54,16 +49,15 @@ public class MovimientoRepository implements IMovimientoRepository {
     }
 
     @Override
-    public List<MovimientoDTO> getAllByCuentaId(int cuentaId){
-        List<Movimiento> lstMovimientos = movimientoCrudRepository.findByCuentaIdByOrderByIdAsc(cuentaId);
-        return MovimientoMapper.INSTANCE.getDTOs(lstMovimientos);
+    public List<Movimiento> getAllByCuentaId(int cuentaId){
+        return movimientoCrudRepository.findByCuentaIdByOrderByIdAsc(cuentaId);
     }
 
     @Override
-    public List<MovimientoDTO> getAllByCuentaIdBetweenTo(int cuentaId, Date fechaInicio, Date fechaFin){
+    public List<Movimiento> getAllByCuentaIdBetweenTo(int cuentaId, Date fechaInicio, Date fechaFin){
         log.info("Inicio metodo buscando cuentas por id entre fechas");
-        List<Movimiento> lstMovimientos = movimientoCrudRepository.findByCuentaIdBetweenToByOrderByIdAsc(cuentaId, fechaInicio, fechaFin);
-        return MovimientoMapper.INSTANCE.getDTOs(lstMovimientos);
+
+        return movimientoCrudRepository.findByCuentaIdBetweenToByOrderByIdAsc(cuentaId, fechaInicio, fechaFin);
 
     }
 }

@@ -7,6 +7,8 @@ import com.ntt.data.mcsv_personacliente.domain.repository.IClienteRepository;
 import com.ntt.data.mcsv_personacliente.domain.service.IClienteService;
 import com.ntt.data.mcsv_personacliente.domain.util.ServiceUtil;
 import com.ntt.data.mcsv_personacliente.domain.util.UsuarioUtil;
+import com.ntt.data.mcsv_personacliente.persistence.entity.Cliente;
+import com.ntt.data.mcsv_personacliente.persistence.mapper.ClienteMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -24,18 +26,20 @@ public class ClienteService implements IClienteService {
     private final ServiceUtil serviceUtil;
     private final UsuarioUtil usuarioUtil;
     private final IClienteRepository clienteRepository;
-
+    private final ClienteMapper clienteMapper;
     @Override
     public List<ClienteDTO> getAll() {
-        return clienteRepository.getAll();
+
+        return clienteMapper.getDTOs(clienteRepository.getAll());
     }
 
     @Override
     public ClienteDTO getById(Integer id)  {
 
-        return clienteRepository.getById(id).orElseThrow(
-                () -> new DomainException(String.format(DominioConstantes.MSG_ERROR_BUSQUEDA_PERSONA, id))
-                );
+        Cliente cliente = clienteRepository.getById(id).orElseThrow(
+            () -> new DomainException(String.format(DominioConstantes.MSG_ERROR_BUSQUEDA_PERSONA, id))
+        );
+        return clienteMapper.getDTO(cliente);
     }
 
     @Override
@@ -43,7 +47,9 @@ public class ClienteService implements IClienteService {
         clienteDTO.setPersonaId(serviceUtil.generarUuid(clienteDTO.getNombre()));
         String contrasena = usuarioUtil.generarPassword(clienteDTO);
         clienteDTO.setContrasena(contrasena);
-        return clienteRepository.save(clienteDTO);
+
+        Cliente entidad = clienteMapper.getEntidad(clienteDTO);
+        return clienteMapper.getDTO(clienteRepository.save(entidad));
     }
 
     @Override
@@ -52,20 +58,18 @@ public class ClienteService implements IClienteService {
             log.error("update: id no enviado para la actualizacion de informacion");
             throw new DomainException(String.format(DominioConstantes.MSG_ERROR_DATA_REQUERIDA, "ID CLIENTE"));
         }
-        getById(clienteDTO.getId());
+        if(!serviceUtil.uuidValid(clienteDTO.getContrasena())){
+            String contrasena = usuarioUtil.generarPassword(clienteDTO);
+            clienteDTO.setContrasena(contrasena);
+        }
 
-        String contrasena = usuarioUtil.generarPassword(clienteDTO);
-        clienteDTO.setContrasena(contrasena);
-
-        return clienteRepository.save(clienteDTO);
+        Cliente entidad = clienteMapper.getEntidad(clienteDTO);
+        return clienteMapper.getDTO(clienteRepository.save(entidad));
     }
 
     @Override
-    public ClienteDTO delete(Integer id) {
-        ClienteDTO clienteDTO = getById(id);
+    public void delete(Integer id) {
         clienteRepository.delete(id);
         log.info("Metodo delete procesado correctamente");
-
-        return clienteDTO;
     }
 }

@@ -83,8 +83,8 @@ public class MovimientoController {
     public ResponseEntity delete(@PathVariable("id") int id){
         try {
             log.info("Recibida la solicitud DELETE para la eliminacion de datos en /api/movimientos");
-
-            return new ResponseEntity<>(movimientoService.delete(id), HttpStatus.CREATED);
+            movimientoService.delete(id);
+            return new ResponseEntity<>(HttpStatus.OK);
         }catch (Exception e){
             log.error("Excepción al procesar la peticion DELETE en /api/movimientos.", e);
 

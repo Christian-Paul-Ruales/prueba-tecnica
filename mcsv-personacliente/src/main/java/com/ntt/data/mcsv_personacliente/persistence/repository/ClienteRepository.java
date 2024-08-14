@@ -23,37 +23,31 @@ public class ClienteRepository implements IClienteRepository {
 
 
     @Override
-    public List<ClienteDTO> getAll() {
-        List<Cliente> lstClientes = (List<Cliente>) clienteCrudRepository.findAll();
+    public List<Cliente> getAll() {
 
-        log.info(
-                new StringBuilder("Metodo getAll: numero de datos a retornar ")
-                        .append(lstClientes.size()).toString()
-                );
+        log.info("Metodo getAll: en repositorio ");
 
-        return ClienteMapper.INSTANCE.getDTOs(lstClientes);
+        return  (List<Cliente>) clienteCrudRepository.findAll();
     }
 
     @Override
-    public Optional<ClienteDTO> getById(int id) {
+    public Optional<Cliente> getById(int id) {
         log.info(
                 new StringBuilder("Metodo getById: id enviada  ")
                         .append(id).toString()
         );
-        return clienteCrudRepository.findById(id).map(
-                cliente -> ClienteMapper.INSTANCE.getDTO(cliente)
-        );
+        return clienteCrudRepository.findById(id);
     }
 
     @Override
-    public ClienteDTO save(ClienteDTO clienteDTO) {
-        Cliente cliente = clienteCrudRepository.save(ClienteMapper.INSTANCE.getEntidad(clienteDTO));
-        return ClienteMapper.INSTANCE.getDTO(cliente);
+    public Cliente save(Cliente cliente) {
+        return clienteCrudRepository.save(cliente);
+
     }
 
     @Override
-    public ClienteDTO update(ClienteDTO clienteDTO) {
-        return save(clienteDTO);
+    public Cliente update(Cliente cliente) {
+        return save(cliente);
     }
 
     @Override

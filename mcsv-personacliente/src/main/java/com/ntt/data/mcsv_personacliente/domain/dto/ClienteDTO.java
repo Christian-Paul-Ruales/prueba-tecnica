@@ -12,7 +12,7 @@ public class ClienteDTO extends PersonaDTO{
      * */
     private Integer id;
     @NotNull
-    @Size(min = 5, max=20, message = "El password debe tener entre 5 y 20 caracteres")
+    @Size(min = 5, max=100, message = "El password debe tener entre 5 y 20 caracteres")
     private String contrasena;
     @NotNull(message = "Estado obligatorio")
     private Boolean estado;

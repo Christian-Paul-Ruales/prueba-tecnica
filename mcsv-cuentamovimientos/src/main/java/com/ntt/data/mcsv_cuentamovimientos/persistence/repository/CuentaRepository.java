@@ -1,17 +1,11 @@
 package com.ntt.data.mcsv_cuentamovimientos.persistence.repository;
 
-import com.ntt.data.mcsv_cuentamovimientos.domain.dto.CuentaDTO;
 import com.ntt.data.mcsv_cuentamovimientos.domain.repository.ICuentaRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.crud.CuentaCrudRepository;
 import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Cuenta;
-import com.ntt.data.mcsv_cuentamovimientos.persistence.mapper.CuentaMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -21,32 +15,27 @@ import java.util.Optional;
 public class CuentaRepository implements ICuentaRepository {
 
     private final CuentaCrudRepository cuentaCrudRepository;
-    
-    @Override
-    public List<CuentaDTO> getAll() {
-        List<Cuenta> lstCuentas = (List<Cuenta>) cuentaCrudRepository.findAll();
 
-        return CuentaMapper.INSTANCE.getDTOs(lstCuentas);
+    @Override
+    public List<Cuenta> getAll() {
+        return (List<Cuenta>) cuentaCrudRepository.findAll();
     }
 
     @Override
-    public Optional<CuentaDTO> getById(int id) {
+    public Optional<Cuenta> getById(int id) {
 
-        return cuentaCrudRepository.findById(id).map(
-                cuenta -> CuentaMapper.INSTANCE.getDTO(cuenta)
-        );
+        return cuentaCrudRepository.findById(id);
     }
 
     @Override
-    public CuentaDTO save(CuentaDTO cuentaDTO) {
-        Cuenta cuenta  = cuentaCrudRepository.save(CuentaMapper.INSTANCE.getEntidad(cuentaDTO));
-        return CuentaMapper.INSTANCE.getDTO(cuenta);
+    public Cuenta save(Cuenta cuenta) {
+        return cuentaCrudRepository.save(cuenta);
     }
 
     @Override
-    public CuentaDTO update(CuentaDTO cuentaDTO) {
+    public Cuenta update(Cuenta cuenta) {
 
-        return save(cuentaDTO);
+        return save(cuenta);
     }
 
     @Override
@@ -55,10 +44,9 @@ public class CuentaRepository implements ICuentaRepository {
     }
 
     @Override
-    public List<CuentaDTO> getByClienteId(int id){
-        List<Cuenta> lstCuentas = cuentaCrudRepository.findByClienteId(id);
-        log.info(String.format("Cliente %s se encontraron %s cuentas",id, lstCuentas.size()));
-        return CuentaMapper.INSTANCE.getDTOs(lstCuentas);
+    public List<Cuenta> getByClienteId(int id){
+        log.info(String.format("Busqueda de cuentas del cliente %s ",id));
+        return cuentaCrudRepository.findByClienteId(id);
     }
 
 }

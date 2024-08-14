@@ -1,23 +1,24 @@
 package com.ntt.data.mcsv_cuentamovimientos.domain.repository;
 
 import com.ntt.data.mcsv_cuentamovimientos.domain.dto.MovimientoDTO;
+import com.ntt.data.mcsv_cuentamovimientos.persistence.entity.Movimiento;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 public interface IMovimientoRepository {
-    List<MovimientoDTO> getAll();
+    List<Movimiento> getAll();
 
-    Optional<MovimientoDTO> getById(int id);
+    Optional<Movimiento> getById(int id);
 
-    MovimientoDTO save(MovimientoDTO movimiento);
+    Movimiento save(Movimiento movimiento);
 
-    MovimientoDTO update(MovimientoDTO movimiento);
+    Movimiento update(Movimiento movimiento);
 
     void delete(int id);
 
-    List<MovimientoDTO> getAllByCuentaId(int cuentaId);
-    List<MovimientoDTO> getAllByCuentaIdBetweenTo(int cuentaId, Date fechaInicio, Date fechaFin);
+    List<Movimiento> getAllByCuentaId(int cuentaId);
+    List<Movimiento> getAllByCuentaIdBetweenTo(int cuentaId, Date fechaInicio, Date fechaFin);
 
 }

@@ -49,7 +49,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/clientes/3",
+					"raw": "http://localhost:8080/api/clientes/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,7 +58,7 @@
 					"path": [
 						"api",
 						"clientes",
-						"3"
+						"1"
 					]
 				}
 			},
@@ -86,7 +86,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombre\": \"Romina Liva\",\n    \"genero\": \"F\",\n    \"edad\": 14,\n    \"identificacion\": \"12312311111\",\n    \"direccion\": \"Mariano Campo s2-445\",\n    \"telefono\": \"02241893\",\n    \"contrasena\": \"pass123\",\n    \"estado\": true\n}",
+					"raw": "{\n    \"nombre\": \"Christian Aguilar\",\n    \"genero\": \"M\",\n    \"edad\": 88,\n    \"identificacion\": \"1826335511\",\n    \"direccion\": \"Pueblo Unido\",\n    \"telefono\": \"022601823\",\n    \"contrasena\": \"ejemploPass\",\n    \"estado\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -131,7 +131,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 6,\n    \"personaId\": \"d9e1b8b033c63aa4a9e01a3c9fd74265\",\n    \"nombre\": \"Romina Suarez\",\n    \"genero\": \"F\",\n    \"edad\": 14,\n    \"identificacion\": \"12312311111\",\n    \"direccion\": \"Mariano Campo s2-555\",\n    \"telefono\": \"099333313\",\n    \"contrasena\": \"adf8e1c7d9c73291b99e6713b0688666\",\n    \"estado\": true\n}",
+					"raw": "{\n    \"personaId\": \"39703c7f982e3863845fa791a55dc449\",\n    \"nombre\": \"Christian Aguilar Salcedo\",\n    \"genero\": \"M\",\n    \"edad\": 96,\n    \"identificacion\": \"1826335511\",\n    \"direccion\": \"Barrio Unido\",\n    \"telefono\": \"022601823\",\n    \"id\": 10,\n    \"contrasena\": \"0a32769a928b3028a7c4ab6824258ac2\",\n    \"estado\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -184,7 +184,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/clientes/7",
+					"raw": "http://localhost:8080/api/clientes/9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -193,7 +193,7 @@
 					"path": [
 						"api",
 						"clientes",
-						"7"
+						"9"
 					]
 				},
 				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."

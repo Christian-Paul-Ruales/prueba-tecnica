@@ -19,5 +19,5 @@ public interface IClienteService {
     ClienteDTO update(ClienteDTO clienteDTO);
 
 
-    ClienteDTO delete(Integer id);
+    void delete(Integer id);
 }

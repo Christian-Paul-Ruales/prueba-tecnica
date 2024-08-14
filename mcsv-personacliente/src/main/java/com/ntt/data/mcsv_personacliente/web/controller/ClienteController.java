@@ -26,14 +26,18 @@ public class ClienteController {
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
-    public List<ClienteDTO> getAll() {
+    public ResponseEntity<List<ClienteDTO>> getAll() {
         log.info("Recibida la solicitud GET de todos los registros para /api/clientes/all");
-
-        return clienteService.getAll();
+        try {
+            return new ResponseEntity<>(clienteService.getAll(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Excepcion al procesar la peticion GET con id", e);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getById(@PathVariable("id") int id) {
+    public ResponseEntity<ClienteDTO> getById(@PathVariable("id") int id) {
         log.info("Recibida la solicitud GET de busqueda de un registro mediante {id} para /api/clientes");
 
         try {
@@ -64,14 +68,10 @@ public class ClienteController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity delete(@PathVariable("id") int id ) {
-        try {
+    @ResponseStatus(HttpStatus.OK)
+    public void delete(@PathVariable("id") int id ) {
+            clienteService.delete(id);
             log.info("Recibida la solicitud DELETE para la eliminacion de datos en /api/clientes");
-            return new ResponseEntity<>(clienteService.delete(id), HttpStatus.OK);
-        }catch (Exception e){
-            log.error("Excepcion al procesar la peticion DELETE en /api/clientes.", e);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
 
     }
 
